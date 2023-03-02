@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+#platform :ios, '9.0'
 
 inhibit_all_warnings!
 
@@ -8,15 +8,15 @@ target 'TmdbMVVM-IB' do
   use_frameworks!
 
   # Pods for TmdbMVVM-IB
-  pod 'Alamofire', '~> 4.8.0'
+  pod 'Alamofire', '~> 5.4.0'
   pod 'Kingfisher', '~> 4.10.1'
-  pod 'Wormholy', '~> 1.4.0', configurations: ['Debug Staging']
-  pod 'AlamofireNetworkActivityLogger', '~> 2.4.0m', configurations: ['Debug Staging']
+  pod 'Wormholy', '~> 1.6.4', configurations: ['Debug Staging', 'Debug Verify', 'Debug Production']
+  pod 'AlamofireNetworkActivityLogger', '~> 3.4', configurations: ['Debug Staging', 'Debug Verify', 'Debug Production']
 
   pod 'SVProgressHUD', '~> 2.2.5'
   pod 'EZAlertController', :git => 'https://github.com/thellimist/EZAlertController.git'
 
-  pod 'SwifterSwift', '~> 4.6.0'
+  pod 'SwifterSwift', '~> 5.2.0'
   pod 'SwiftyJSON', '~> 5.0.0'
 
   pod 'YouTubePlayer'

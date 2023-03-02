@@ -20,7 +20,8 @@ class GenreVM: BaseVM {
 
     func fetchMovieGenre() {
         isShowDialogLoading.value = true
-        request(Router.fetchMovieGenre)
+
+        AF.request(Router.fetchMovieGenre)
             .validate()
             .responseJSON { [weak self] response in
                 self?.isShowDialogLoading.value = false

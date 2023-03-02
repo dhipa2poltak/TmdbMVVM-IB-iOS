@@ -17,7 +17,7 @@ class MovieTrailerVM: BaseVM {
     func fetchMovieTrailer(movieId: Int) {
         isShowDialogLoading.value = true
 
-        request(Router.fetchMovieTrailer(movieId: movieId))
+        AF.request(Router.fetchMovieTrailer(movieId: movieId))
             .validate()
             .responseJSON { [weak self] response in
                 self?.isShowDialogLoading.value = false

@@ -21,7 +21,7 @@ class MovieByGenreVM: BaseVM {
     func fetchMovieGenre(genreId: String, page: Int) {
         isShowDialogLoading.value = true
 
-        request(Router.fetchMovieByGenre(genreId: genreId, page: page))
+        AF.request(Router.fetchMovieByGenre(genreId: genreId, page: page))
             .validate()
             .responseJSON { [weak self] response in
                 self?.isShowDialogLoading.value = false
