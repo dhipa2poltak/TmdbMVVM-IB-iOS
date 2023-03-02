@@ -5,11 +5,12 @@
 //  Created by user on 01/03/23.
 //
 
-import Alamofire
 import Foundation
-import SwiftyJSON
+import RxSwift
 
 class GenreVM: BaseVM {
+
+    private let disposeBag = DisposeBag()
 
     var genres: [Genre]?
     let genreData: Box<Bool?> = Box(false)
@@ -21,27 +22,19 @@ class GenreVM: BaseVM {
     func fetchMovieGenre() {
         isShowDialogLoading.value = true
 
-        AF.request(Router.fetchMovieGenre)
-            .validate()
-            .responseJSON { [weak self] response in
+        ApiClient.fetchMovieGenre()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false
 
-                switch response.result {
-                case .success:
-                    do {
-                        let json = JSON(response.value ?? "")
-                        let data = try json["genres"].rawData(options: .prettyPrinted)
-
-                        let genres: [Genre] = try JSONDecoder().decode([Genre].self, from: data)
-                        self?.genres = genres
-                        self?.genreData.value = true
-                    } catch {
-                        self?.toastMessage.value = "Error: \(error.localizedDescription)"
-                    }
-                case .failure(let error):
-                    self?.toastMessage.value = "error: \(error.localizedDescription)"
+                if let genres = response.genres {
+                    self?.genres = genres
+                    self?.genreData.value = true
                 }
+            }, onError: { [weak self ] error in
+                self?.isShowDialogLoading.value = false
 
-        }
+                self?.toastMessage.value = "error: \(error.localizedDescription)"
+            }).disposed(by: disposeBag)
     }
 }

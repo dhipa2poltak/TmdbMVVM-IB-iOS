@@ -15,6 +15,9 @@ class GenreVC: BaseVC, Storyboarded {
     let viewModel = GenreVM()
     weak var coordinator: AppCoordinator?
 
+    private let nbName = "SingleRowTVC"
+    private let cellId = "SingleRowTVC"
+
     private lazy var refreshControl: UIRefreshControl = {
         let rc = UIRefreshControl()
         rc.addTarget(self, action: #selector(didRefreshControl), for: .valueChanged)
@@ -43,8 +46,8 @@ class GenreVC: BaseVC, Storyboarded {
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .none
 
-        let nibTVC = UINib(nibName: "SingleRowTVC", bundle: nil)
-        tableVw.register(nibTVC, forCellReuseIdentifier: "SingleRowTVC")
+        let nibTVC = UINib(nibName: nbName, bundle: nil)
+        tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
     }
 
     private func setupObserver() {
@@ -89,7 +92,7 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SingleRowTVC", for: indexPath) as! SingleRowTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SingleRowTVC
 
         if let genre = viewModel.genres?[indexPath.row] {
             cell.bindData(text: genre.name ?? "")

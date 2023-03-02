@@ -21,6 +21,9 @@ target 'TmdbMVVM-IB' do
 
   pod 'YouTubePlayer'
 
+  pod 'RxSwift',    '~> 6.0.0'
+  pod 'RxCocoa',    '~> 6.0.0'
+
   target 'TmdbMVVM-IBTests' do
     inherit! :search_paths
     # Pods for testing

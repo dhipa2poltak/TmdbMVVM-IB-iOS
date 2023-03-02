@@ -51,6 +51,7 @@
 		CE84468729AF7A5100231703 /* ReviewTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE84468529AF7A5100231703 /* ReviewTVC.xib */; };
 		CE84469829B027FF00231703 /* MovieTrailerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84469729B027FF00231703 /* MovieTrailerVC.swift */; };
 		CE8446A029B0282500231703 /* MovieTrailerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84469F29B0282500231703 /* MovieTrailerVM.swift */; };
+		CE8447A429B0D6F300231703 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8447A329B0D6F300231703 /* ApiClient.swift */; };
 		D048132A1D9B521E7BC4CDB1 /* Pods_TmdbMVVM_IB_TmdbMVVM_IBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0BEB53929065CA1EAD04F2 /* Pods_TmdbMVVM_IB_TmdbMVVM_IBUITests.framework */; };
 		F4B5CD7E7497E696F7C3DABB /* Pods_TmdbMVVM_IBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B9A555A50325BA1FA48389 /* Pods_TmdbMVVM_IBTests.framework */; };
 /* End PBXBuildFile section */
@@ -141,6 +142,7 @@
 		CE84468529AF7A5100231703 /* ReviewTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTVC.xib; sourceTree = "<group>"; };
 		CE84469729B027FF00231703 /* MovieTrailerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerVC.swift; sourceTree = "<group>"; };
 		CE84469F29B0282500231703 /* MovieTrailerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerVM.swift; sourceTree = "<group>"; };
+		CE8447A329B0D6F300231703 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CFC133C69DFD92F5B4A428D1 /* Pods-TmdbMVVM-IB.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.debug staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.debug staging.xcconfig"; sourceTree = "<group>"; };
 		F89B5407C35E2682668ED4E2 /* Pods-TmdbMVVM-IBTests.debug verify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IBTests.debug verify.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IBTests/Pods-TmdbMVVM-IBTests.debug verify.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8445C929AF179F00231703 /* Router.swift */,
+				CE8447A329B0D6F300231703 /* ApiClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				CE84465029AF4B0400231703 /* MovieByGenreVM.swift in Sources */,
 				CE8445E229AF303100231703 /* BaseVM.swift in Sources */,
 				CE8445E729AF305C00231703 /* GenreVM.swift in Sources */,
+				CE8447A429B0D6F300231703 /* ApiClient.swift in Sources */,
 				CE8445A229AF11E800231703 /* Box.swift in Sources */,
 				CE84457E29AF0F8900231703 /* BuildConfiguration.swift in Sources */,
 				CE84464129AF39D200231703 /* SingleRowTVC.swift in Sources */,

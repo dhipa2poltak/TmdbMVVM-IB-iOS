@@ -17,6 +17,9 @@ class MovieByGenreVC: BaseVC, Storyboarded {
     let viewModel = MovieByGenreVM()
     weak var coordinator: AppCoordinator?
 
+    private let nbName = "SingleRowTVC"
+    private let cellId = "SingleRowTVC"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,8 +36,8 @@ class MovieByGenreVC: BaseVC, Storyboarded {
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .none
 
-        let nibTVC = UINib(nibName: "SingleRowTVC", bundle: nil)
-        tableVw.register(nibTVC, forCellReuseIdentifier: "SingleRowTVC")
+        let nibTVC = UINib(nibName: nbName, bundle: nil)
+        tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
         
         tableVw.reloadData()
     }
@@ -86,7 +89,7 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SingleRowTVC", for: indexPath) as! SingleRowTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SingleRowTVC
 
         let movie = viewModel.movies[indexPath.row]
 

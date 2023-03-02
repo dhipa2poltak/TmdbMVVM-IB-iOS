@@ -5,11 +5,12 @@
 //  Created by user on 02/03/23.
 //
 
-import Alamofire
 import Foundation
-import SwiftyJSON
+import RxSwift
 
 class MovieTrailerVM: BaseVM {
+
+    private let disposeBag = DisposeBag()
 
     var movieId = -1
     let movieKey = Box("")
@@ -17,31 +18,23 @@ class MovieTrailerVM: BaseVM {
     func fetchMovieTrailer(movieId: Int) {
         isShowDialogLoading.value = true
 
-        AF.request(Router.fetchMovieTrailer(movieId: movieId))
-            .validate()
-            .responseJSON { [weak self] response in
+        ApiClient.fetchMovieTrailer(movieId: movieId)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false
 
-                switch response.result {
-                case .success:
-                    do {
-                        let json = JSON(response.value ?? "")
-                        let data = try json["results"].rawData(options: .prettyPrinted)
-
-                        let trailers: [Trailer] = try JSONDecoder().decode([Trailer].self, from: data)
-
-                        for trailer in trailers {
-                            if trailer.site?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "youtube" {
-                                self?.movieKey.value = trailer.key ?? ""
-                                break
-                            }
+                if let trailers = response.results {
+                    for trailer in trailers {
+                        if trailer.site?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "youtube" {
+                            self?.movieKey.value = trailer.key ?? ""
+                            break
                         }
-                    } catch {
-                        self?.toastMessage.value = "Error: \(error.localizedDescription)"
                     }
-                case .failure(let error):
-                    self?.toastMessage.value = "Error: \(error.localizedDescription)"
                 }
-        }
+            }, onError: { [weak self] error in
+                self?.isShowDialogLoading.value = false
+
+                self?.toastMessage.value = "error: \(error.localizedDescription)"
+            }).disposed(by: disposeBag)
     }
 }

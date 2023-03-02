@@ -5,11 +5,12 @@
 //  Created by user on 01/03/23.
 //
 
-import Alamofire
 import Foundation
-import SwiftyJSON
+import RxSwift
 
 class MovieReviewVM: BaseVM {
+
+    private let disposeBag = DisposeBag()
 
     var reviews: [Review] = []
     let reviewData: Box<Bool?> = Box(false)
@@ -21,33 +22,25 @@ class MovieReviewVM: BaseVM {
     func fetchMovieReviews(movieId: Int, page: Int) {
         isShowDialogLoading.value = true
 
-        AF.request(Router.fetchMovieReviews(movieId: movieId, page: page))
-            .validate()
-            .responseJSON { [weak self] response in
+        ApiClient.fetchMovieReviews(movieId: movieId, page: page)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] response in
                 self?.isShowDialogLoading.value = false
 
-                switch response.result {
-                case .success:
-                    do {
-                        let json = JSON(response.value ?? "")
-                        let data = try json["results"].rawData(options: .prettyPrinted)
-
-                        let reviews: [Review] = try JSONDecoder().decode([Review].self, from: data)
-
-                        if reviews.count > 0 {
-                            for review in reviews {
-                                self?.reviews.append(review)
-                                self?.reviewData.value = true
-                            }
-
-                            self?.page = page
+                if let reviews = response.results {
+                    if reviews.count > 0 {
+                        for review in reviews {
+                            self?.reviews.append(review)
+                            self?.reviewData.value = true
                         }
-                    } catch {
-                        self?.toastMessage.value = "Error: \(error.localizedDescription)"
+
+                        self?.page = page
                     }
-                case .failure(let error):
-                    self?.toastMessage.value = "Error: \(error.localizedDescription)"
                 }
-        }
+            }, onError: { [weak self] error in
+                self?.isShowDialogLoading.value = false
+
+                self?.toastMessage.value = "error: \(error.localizedDescription)"
+            }).disposed(by: disposeBag)
     }
 }

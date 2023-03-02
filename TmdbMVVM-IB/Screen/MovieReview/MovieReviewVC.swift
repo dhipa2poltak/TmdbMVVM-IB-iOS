@@ -16,6 +16,9 @@ class MovieReviewVC: BaseVC, Storyboarded {
 
     let viewModel = MovieReviewVM()
 
+    private let nbName = "ReviewTVC"
+    private let cellId = "ReviewTVC"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,8 +32,8 @@ class MovieReviewVC: BaseVC, Storyboarded {
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .singleLine
 
-        let nibTVC = UINib(nibName: "ReviewTVC", bundle: nil)
-        tableVw.register(nibTVC, forCellReuseIdentifier: "ReviewTVC")
+        let nibTVC = UINib(nibName: nbName, bundle: nil)
+        tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
 
         tableVw.reloadData()
     }
@@ -82,7 +85,7 @@ extension MovieReviewVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTVC", for: indexPath) as! ReviewTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ReviewTVC
 
         let review = viewModel.reviews[indexPath.row]
 
