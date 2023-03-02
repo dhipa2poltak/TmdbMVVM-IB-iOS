@@ -1,0 +1,1548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		341BCDACE205E09CE24BD1C1 /* Pods_TmdbMVVM_IB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAB9398B026A8091E953855 /* Pods_TmdbMVVM_IB.framework */; };
+		CE84450E29AF096C00231703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84450D29AF096C00231703 /* AppDelegate.swift */; };
+		CE84451529AF096D00231703 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE84451329AF096D00231703 /* Main.storyboard */; };
+		CE84451729AF097A00231703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE84451629AF097A00231703 /* Assets.xcassets */; };
+		CE84451A29AF097A00231703 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE84451829AF097A00231703 /* LaunchScreen.storyboard */; };
+		CE84452529AF097B00231703 /* TmdbMVVM_IBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84452429AF097B00231703 /* TmdbMVVM_IBTests.swift */; };
+		CE84453029AF097B00231703 /* TmdbMVVM_IBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84452F29AF097B00231703 /* TmdbMVVM_IBUITests.swift */; };
+		CE84454829AF0A9400231703 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84454729AF0A9400231703 /* Coordinator.swift */; };
+		CE84455029AF0ADA00231703 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84454F29AF0ADA00231703 /* AppCoordinator.swift */; };
+		CE84455529AF0B2500231703 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84455429AF0B2500231703 /* Storyboarded.swift */; };
+		CE84457E29AF0F8900231703 /* BuildConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84457D29AF0F8900231703 /* BuildConfiguration.swift */; };
+		CE8445A229AF11E800231703 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445A129AF11E800231703 /* Box.swift */; };
+		CE8445AB29AF12D600231703 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445AA29AF12D600231703 /* BaseVC.swift */; };
+		CE8445B429AF134100231703 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445B329AF134100231703 /* UIColor+Ext.swift */; };
+		CE8445BC29AF13D200231703 /* GenreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445BB29AF13D200231703 /* GenreVC.swift */; };
+		CE8445C429AF14CA00231703 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445C329AF14CA00231703 /* UIViewController+Ext.swift */; };
+		CE8445CA29AF179F00231703 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445C929AF179F00231703 /* Router.swift */; };
+		CE8445E229AF303100231703 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445E129AF303100231703 /* BaseVM.swift */; };
+		CE8445E729AF305C00231703 /* GenreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445E629AF305C00231703 /* GenreVM.swift */; };
+		CE8445ED29AF30B500231703 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445EC29AF30B500231703 /* Genre.swift */; };
+		CE8445F529AF30E600231703 /* DiscoverMovieByGenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445F429AF30E600231703 /* DiscoverMovieByGenreResponse.swift */; };
+		CE8445FA29AF311A00231703 /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445F929AF311A00231703 /* GenreResponse.swift */; };
+		CE8445FF29AF314600231703 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8445FE29AF314600231703 /* Movie.swift */; };
+		CE84460429AF31AB00231703 /* SpokenLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84460329AF31AB00231703 /* SpokenLanguage.swift */; };
+		CE84460929AF31D600231703 /* ProductionCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84460829AF31D600231703 /* ProductionCountry.swift */; };
+		CE84460E29AF31FC00231703 /* ProductionCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84460D29AF31FC00231703 /* ProductionCompany.swift */; };
+		CE84461329AF322300231703 /* MovieDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84461229AF322300231703 /* MovieDetailsResponse.swift */; };
+		CE84461829AF324D00231703 /* AuthorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84461729AF324D00231703 /* AuthorDetails.swift */; };
+		CE84461D29AF327400231703 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84461C29AF327300231703 /* Review.swift */; };
+		CE84462229AF329D00231703 /* ReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84462129AF329D00231703 /* ReviewResponse.swift */; };
+		CE84462729AF32D100231703 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84462629AF32D100231703 /* Trailer.swift */; };
+		CE84462C29AF32FC00231703 /* TrailerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84462B29AF32FC00231703 /* TrailerResponse.swift */; };
+		CE84464129AF39D200231703 /* SingleRowTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84463F29AF39D200231703 /* SingleRowTVC.swift */; };
+		CE84464229AF39D200231703 /* SingleRowTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE84464029AF39D200231703 /* SingleRowTVC.xib */; };
+		CE84464829AF49F300231703 /* MovieByGenreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84464729AF49F300231703 /* MovieByGenreVC.swift */; };
+		CE84465029AF4B0400231703 /* MovieByGenreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84464F29AF4B0400231703 /* MovieByGenreVM.swift */; };
+		CE84466929AF67E600231703 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84466829AF67E600231703 /* MovieDetailVC.swift */; };
+		CE84467129AF67FC00231703 /* MovieDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84467029AF67FC00231703 /* MovieDetailVM.swift */; };
+		CE84467729AF766800231703 /* MovieReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84467629AF766800231703 /* MovieReviewVC.swift */; };
+		CE84467F29AF76A200231703 /* MovieReviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84467E29AF76A200231703 /* MovieReviewVM.swift */; };
+		CE84468629AF7A5100231703 /* ReviewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84468429AF7A5100231703 /* ReviewTVC.swift */; };
+		CE84468729AF7A5100231703 /* ReviewTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE84468529AF7A5100231703 /* ReviewTVC.xib */; };
+		CE84469829B027FF00231703 /* MovieTrailerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84469729B027FF00231703 /* MovieTrailerVC.swift */; };
+		CE8446A029B0282500231703 /* MovieTrailerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84469F29B0282500231703 /* MovieTrailerVM.swift */; };
+		D048132A1D9B521E7BC4CDB1 /* Pods_TmdbMVVM_IB_TmdbMVVM_IBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0BEB53929065CA1EAD04F2 /* Pods_TmdbMVVM_IB_TmdbMVVM_IBUITests.framework */; };
+		F4B5CD7E7497E696F7C3DABB /* Pods_TmdbMVVM_IBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B9A555A50325BA1FA48389 /* Pods_TmdbMVVM_IBTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE84452129AF097B00231703 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE84450229AF096C00231703 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE84450929AF096C00231703;
+			remoteInfo = "TmdbMVVM-IB";
+		};
+		CE84452C29AF097B00231703 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE84450229AF096C00231703 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE84450929AF096C00231703;
+			remoteInfo = "TmdbMVVM-IB";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00D66C62817EB41B8B0C6F2F /* Pods-TmdbMVVM-IBTests.release verify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IBTests.release verify.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IBTests/Pods-TmdbMVVM-IBTests.release verify.xcconfig"; sourceTree = "<group>"; };
+		0749E36EE79C273E061F636E /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug verify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug verify.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug verify.xcconfig"; sourceTree = "<group>"; };
+		178CE298CFB09A247CD7F34E /* Pods-TmdbMVVM-IBTests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IBTests.release production.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IBTests/Pods-TmdbMVVM-IBTests.release production.xcconfig"; sourceTree = "<group>"; };
+		33CFC2CF80B34788A7FE56C9 /* Pods-TmdbMVVM-IBTests.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IBTests.debug production.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IBTests/Pods-TmdbMVVM-IBTests.debug production.xcconfig"; sourceTree = "<group>"; };
+		342219A0930D41A4A5EDA8CA /* Pods-TmdbMVVM-IB.debug verify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.debug verify.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.debug verify.xcconfig"; sourceTree = "<group>"; };
+		3F0BEB53929065CA1EAD04F2 /* Pods_TmdbMVVM_IB_TmdbMVVM_IBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TmdbMVVM_IB_TmdbMVVM_IBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6400D13802083F5C48CC372D /* Pods-TmdbMVVM-IB.release verify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.release verify.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.release verify.xcconfig"; sourceTree = "<group>"; };
+		68B9A555A50325BA1FA48389 /* Pods_TmdbMVVM_IBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TmdbMVVM_IBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E19888F4EFD34BB0B23690A /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release staging.xcconfig"; sourceTree = "<group>"; };
+		7602A68D62C6F041B5FDD7CB /* Pods-TmdbMVVM-IBTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IBTests.debug staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IBTests/Pods-TmdbMVVM-IBTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		80A548A3F80CFE2CAC33BD7F /* Pods-TmdbMVVM-IBTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IBTests.release staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IBTests/Pods-TmdbMVVM-IBTests.release staging.xcconfig"; sourceTree = "<group>"; };
+		8443709E3775E4667EF82469 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release verify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release verify.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release verify.xcconfig"; sourceTree = "<group>"; };
+		8A5A255C446D7F97B643F325 /* Pods-TmdbMVVM-IB.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.release production.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.release production.xcconfig"; sourceTree = "<group>"; };
+		8DB192A310266CBDF98A9B48 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug production.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug production.xcconfig"; sourceTree = "<group>"; };
+		9257438D0DAE7FB5BF66A9D1 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		B808D3E346ABC6F206CDC808 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release production.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release production.xcconfig"; sourceTree = "<group>"; };
+		BFAB9398B026A8091E953855 /* Pods_TmdbMVVM_IB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TmdbMVVM_IB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C86AA6005107FC6196B80037 /* Pods-TmdbMVVM-IB.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.debug production.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.debug production.xcconfig"; sourceTree = "<group>"; };
+		C88FFBCD2731D7BF2759B185 /* Pods-TmdbMVVM-IB.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.release staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.release staging.xcconfig"; sourceTree = "<group>"; };
+		CE84450A29AF096C00231703 /* TmdbMVVM-IB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "TmdbMVVM-IB.app"; path = "TmdbMVVM-IB Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE84450D29AF096C00231703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE84451429AF096D00231703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE84451629AF097A00231703 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE84451929AF097A00231703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE84451B29AF097A00231703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE84452029AF097B00231703 /* TmdbMVVM-IBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TmdbMVVM-IBTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE84452429AF097B00231703 /* TmdbMVVM_IBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbMVVM_IBTests.swift; sourceTree = "<group>"; };
+		CE84452629AF097B00231703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE84452B29AF097B00231703 /* TmdbMVVM-IBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TmdbMVVM-IBUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE84452F29AF097B00231703 /* TmdbMVVM_IBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbMVVM_IBUITests.swift; sourceTree = "<group>"; };
+		CE84453129AF097B00231703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE84454729AF0A9400231703 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CE84454F29AF0ADA00231703 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CE84455429AF0B2500231703 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		CE84457D29AF0F8900231703 /* BuildConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfiguration.swift; sourceTree = "<group>"; };
+		CE8445A129AF11E800231703 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		CE8445AA29AF12D600231703 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		CE8445B329AF134100231703 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		CE8445BB29AF13D200231703 /* GenreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreVC.swift; sourceTree = "<group>"; };
+		CE8445C329AF14CA00231703 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		CE8445C929AF179F00231703 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CE8445E129AF303100231703 /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
+		CE8445E629AF305C00231703 /* GenreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreVM.swift; sourceTree = "<group>"; };
+		CE8445EC29AF30B500231703 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		CE8445F429AF30E600231703 /* DiscoverMovieByGenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMovieByGenreResponse.swift; sourceTree = "<group>"; };
+		CE8445F929AF311A00231703 /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
+		CE8445FE29AF314600231703 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CE84460329AF31AB00231703 /* SpokenLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpokenLanguage.swift; sourceTree = "<group>"; };
+		CE84460829AF31D600231703 /* ProductionCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCountry.swift; sourceTree = "<group>"; };
+		CE84460D29AF31FC00231703 /* ProductionCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionCompany.swift; sourceTree = "<group>"; };
+		CE84461229AF322300231703 /* MovieDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsResponse.swift; sourceTree = "<group>"; };
+		CE84461729AF324D00231703 /* AuthorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetails.swift; sourceTree = "<group>"; };
+		CE84461C29AF327300231703 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		CE84462129AF329D00231703 /* ReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResponse.swift; sourceTree = "<group>"; };
+		CE84462629AF32D100231703 /* Trailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
+		CE84462B29AF32FC00231703 /* TrailerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerResponse.swift; sourceTree = "<group>"; };
+		CE84463F29AF39D200231703 /* SingleRowTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRowTVC.swift; sourceTree = "<group>"; };
+		CE84464029AF39D200231703 /* SingleRowTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleRowTVC.xib; sourceTree = "<group>"; };
+		CE84464729AF49F300231703 /* MovieByGenreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieByGenreVC.swift; sourceTree = "<group>"; };
+		CE84464F29AF4B0400231703 /* MovieByGenreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieByGenreVM.swift; sourceTree = "<group>"; };
+		CE84466829AF67E600231703 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
+		CE84467029AF67FC00231703 /* MovieDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVM.swift; sourceTree = "<group>"; };
+		CE84467629AF766800231703 /* MovieReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewVC.swift; sourceTree = "<group>"; };
+		CE84467E29AF76A200231703 /* MovieReviewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewVM.swift; sourceTree = "<group>"; };
+		CE84468429AF7A5100231703 /* ReviewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVC.swift; sourceTree = "<group>"; };
+		CE84468529AF7A5100231703 /* ReviewTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTVC.xib; sourceTree = "<group>"; };
+		CE84469729B027FF00231703 /* MovieTrailerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerVC.swift; sourceTree = "<group>"; };
+		CE84469F29B0282500231703 /* MovieTrailerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailerVM.swift; sourceTree = "<group>"; };
+		CFC133C69DFD92F5B4A428D1 /* Pods-TmdbMVVM-IB.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.debug staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.debug staging.xcconfig"; sourceTree = "<group>"; };
+		F89B5407C35E2682668ED4E2 /* Pods-TmdbMVVM-IBTests.debug verify.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IBTests.debug verify.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IBTests/Pods-TmdbMVVM-IBTests.debug verify.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE84450729AF096C00231703 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341BCDACE205E09CE24BD1C1 /* Pods_TmdbMVVM_IB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE84451D29AF097B00231703 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4B5CD7E7497E696F7C3DABB /* Pods_TmdbMVVM_IBTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE84452829AF097B00231703 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D048132A1D9B521E7BC4CDB1 /* Pods_TmdbMVVM_IB_TmdbMVVM_IBUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		380E50C019FC5DF0661A0507 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFAB9398B026A8091E953855 /* Pods_TmdbMVVM_IB.framework */,
+				3F0BEB53929065CA1EAD04F2 /* Pods_TmdbMVVM_IB_TmdbMVVM_IBUITests.framework */,
+				68B9A555A50325BA1FA48389 /* Pods_TmdbMVVM_IBTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE84450129AF096C00231703 = {
+			isa = PBXGroup;
+			children = (
+				CE84450C29AF096C00231703 /* TmdbMVVM-IB */,
+				CE84452329AF097B00231703 /* TmdbMVVM-IBTests */,
+				CE84452E29AF097B00231703 /* TmdbMVVM-IBUITests */,
+				CE84450B29AF096C00231703 /* Products */,
+				E6C13B6CB339BA1EA0D0D6BD /* Pods */,
+				380E50C019FC5DF0661A0507 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE84450B29AF096C00231703 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE84450A29AF096C00231703 /* TmdbMVVM-IB.app */,
+				CE84452029AF097B00231703 /* TmdbMVVM-IBTests.xctest */,
+				CE84452B29AF097B00231703 /* TmdbMVVM-IBUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE84450C29AF096C00231703 /* TmdbMVVM-IB */ = {
+			isa = PBXGroup;
+			children = (
+				CE84454329AF0A6500231703 /* App */,
+				CE8445A929AF12C100231703 /* BaseClass */,
+				CE8445A029AF11C500231703 /* BindingUtil */,
+				CE84457C29AF0F7500231703 /* Configs */,
+				CE8445B229AF132900231703 /* Extension */,
+				CE8445EB29AF309600231703 /* Model */,
+				CE8445C829AF178E00231703 /* Networking */,
+				CE84455929AF0BCA00231703 /* Screen */,
+				CE84463029AF397E00231703 /* UIComponent */,
+				CE84451629AF097A00231703 /* Assets.xcassets */,
+				CE84451B29AF097A00231703 /* Info.plist */,
+			);
+			path = "TmdbMVVM-IB";
+			sourceTree = "<group>";
+		};
+		CE84452329AF097B00231703 /* TmdbMVVM-IBTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE84452429AF097B00231703 /* TmdbMVVM_IBTests.swift */,
+				CE84452629AF097B00231703 /* Info.plist */,
+			);
+			path = "TmdbMVVM-IBTests";
+			sourceTree = "<group>";
+		};
+		CE84452E29AF097B00231703 /* TmdbMVVM-IBUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE84452F29AF097B00231703 /* TmdbMVVM_IBUITests.swift */,
+				CE84453129AF097B00231703 /* Info.plist */,
+			);
+			path = "TmdbMVVM-IBUITests";
+			sourceTree = "<group>";
+		};
+		CE84454329AF0A6500231703 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE84451829AF097A00231703 /* LaunchScreen.storyboard */,
+				CE84451329AF096D00231703 /* Main.storyboard */,
+				CE84450D29AF096C00231703 /* AppDelegate.swift */,
+				CE84454729AF0A9400231703 /* Coordinator.swift */,
+				CE84454F29AF0ADA00231703 /* AppCoordinator.swift */,
+				CE84455429AF0B2500231703 /* Storyboarded.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CE84455929AF0BCA00231703 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				CE84455A29AF0BD200231703 /* Genre */,
+				CE84464629AF499000231703 /* MovieByGenre */,
+				CE84466729AF67A300231703 /* MovieDetail */,
+				CE84467529AF75D000231703 /* MovieReview */,
+				CE84469629B027A900231703 /* MovieTrailer */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		CE84455A29AF0BD200231703 /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				CE8445BB29AF13D200231703 /* GenreVC.swift */,
+				CE8445E629AF305C00231703 /* GenreVM.swift */,
+			);
+			path = Genre;
+			sourceTree = "<group>";
+		};
+		CE84457C29AF0F7500231703 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				CE84457D29AF0F8900231703 /* BuildConfiguration.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		CE8445A029AF11C500231703 /* BindingUtil */ = {
+			isa = PBXGroup;
+			children = (
+				CE8445A129AF11E800231703 /* Box.swift */,
+			);
+			path = BindingUtil;
+			sourceTree = "<group>";
+		};
+		CE8445A929AF12C100231703 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				CE8445AA29AF12D600231703 /* BaseVC.swift */,
+				CE8445E129AF303100231703 /* BaseVM.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		CE8445B229AF132900231703 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CE8445B329AF134100231703 /* UIColor+Ext.swift */,
+				CE8445C329AF14CA00231703 /* UIViewController+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CE8445C829AF178E00231703 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CE8445C929AF179F00231703 /* Router.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CE8445EB29AF309600231703 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE8445EC29AF30B500231703 /* Genre.swift */,
+				CE8445F429AF30E600231703 /* DiscoverMovieByGenreResponse.swift */,
+				CE8445F929AF311A00231703 /* GenreResponse.swift */,
+				CE8445FE29AF314600231703 /* Movie.swift */,
+				CE84460329AF31AB00231703 /* SpokenLanguage.swift */,
+				CE84460829AF31D600231703 /* ProductionCountry.swift */,
+				CE84460D29AF31FC00231703 /* ProductionCompany.swift */,
+				CE84461229AF322300231703 /* MovieDetailsResponse.swift */,
+				CE84461729AF324D00231703 /* AuthorDetails.swift */,
+				CE84461C29AF327300231703 /* Review.swift */,
+				CE84462129AF329D00231703 /* ReviewResponse.swift */,
+				CE84462629AF32D100231703 /* Trailer.swift */,
+				CE84462B29AF32FC00231703 /* TrailerResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE84463029AF397E00231703 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				CE84468329AF7A2500231703 /* ReviewTVC */,
+				CE84463129AF398E00231703 /* SingleRowTVC */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		CE84463129AF398E00231703 /* SingleRowTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE84463F29AF39D200231703 /* SingleRowTVC.swift */,
+				CE84464029AF39D200231703 /* SingleRowTVC.xib */,
+			);
+			path = SingleRowTVC;
+			sourceTree = "<group>";
+		};
+		CE84464629AF499000231703 /* MovieByGenre */ = {
+			isa = PBXGroup;
+			children = (
+				CE84464729AF49F300231703 /* MovieByGenreVC.swift */,
+				CE84464F29AF4B0400231703 /* MovieByGenreVM.swift */,
+			);
+			path = MovieByGenre;
+			sourceTree = "<group>";
+		};
+		CE84466729AF67A300231703 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE84466829AF67E600231703 /* MovieDetailVC.swift */,
+				CE84467029AF67FC00231703 /* MovieDetailVM.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		CE84467529AF75D000231703 /* MovieReview */ = {
+			isa = PBXGroup;
+			children = (
+				CE84467629AF766800231703 /* MovieReviewVC.swift */,
+				CE84467E29AF76A200231703 /* MovieReviewVM.swift */,
+			);
+			path = MovieReview;
+			sourceTree = "<group>";
+		};
+		CE84468329AF7A2500231703 /* ReviewTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE84468429AF7A5100231703 /* ReviewTVC.swift */,
+				CE84468529AF7A5100231703 /* ReviewTVC.xib */,
+			);
+			path = ReviewTVC;
+			sourceTree = "<group>";
+		};
+		CE84469629B027A900231703 /* MovieTrailer */ = {
+			isa = PBXGroup;
+			children = (
+				CE84469729B027FF00231703 /* MovieTrailerVC.swift */,
+				CE84469F29B0282500231703 /* MovieTrailerVM.swift */,
+			);
+			path = MovieTrailer;
+			sourceTree = "<group>";
+		};
+		E6C13B6CB339BA1EA0D0D6BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFC133C69DFD92F5B4A428D1 /* Pods-TmdbMVVM-IB.debug staging.xcconfig */,
+				342219A0930D41A4A5EDA8CA /* Pods-TmdbMVVM-IB.debug verify.xcconfig */,
+				C86AA6005107FC6196B80037 /* Pods-TmdbMVVM-IB.debug production.xcconfig */,
+				C88FFBCD2731D7BF2759B185 /* Pods-TmdbMVVM-IB.release staging.xcconfig */,
+				6400D13802083F5C48CC372D /* Pods-TmdbMVVM-IB.release verify.xcconfig */,
+				8A5A255C446D7F97B643F325 /* Pods-TmdbMVVM-IB.release production.xcconfig */,
+				9257438D0DAE7FB5BF66A9D1 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug staging.xcconfig */,
+				0749E36EE79C273E061F636E /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug verify.xcconfig */,
+				8DB192A310266CBDF98A9B48 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug production.xcconfig */,
+				6E19888F4EFD34BB0B23690A /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release staging.xcconfig */,
+				8443709E3775E4667EF82469 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release verify.xcconfig */,
+				B808D3E346ABC6F206CDC808 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release production.xcconfig */,
+				7602A68D62C6F041B5FDD7CB /* Pods-TmdbMVVM-IBTests.debug staging.xcconfig */,
+				F89B5407C35E2682668ED4E2 /* Pods-TmdbMVVM-IBTests.debug verify.xcconfig */,
+				33CFC2CF80B34788A7FE56C9 /* Pods-TmdbMVVM-IBTests.debug production.xcconfig */,
+				80A548A3F80CFE2CAC33BD7F /* Pods-TmdbMVVM-IBTests.release staging.xcconfig */,
+				00D66C62817EB41B8B0C6F2F /* Pods-TmdbMVVM-IBTests.release verify.xcconfig */,
+				178CE298CFB09A247CD7F34E /* Pods-TmdbMVVM-IBTests.release production.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE84450929AF096C00231703 /* TmdbMVVM-IB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE84453429AF097B00231703 /* Build configuration list for PBXNativeTarget "TmdbMVVM-IB" */;
+			buildPhases = (
+				848B02384862611B0FBD1F23 /* [CP] Check Pods Manifest.lock */,
+				CE84450629AF096C00231703 /* Sources */,
+				CE84450729AF096C00231703 /* Frameworks */,
+				CE84450829AF096C00231703 /* Resources */,
+				2FD4762AFDA0C846A18E2B95 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TmdbMVVM-IB";
+			productName = "TmdbMVVM-IB";
+			productReference = CE84450A29AF096C00231703 /* TmdbMVVM-IB.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE84451F29AF097B00231703 /* TmdbMVVM-IBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE84453729AF097B00231703 /* Build configuration list for PBXNativeTarget "TmdbMVVM-IBTests" */;
+			buildPhases = (
+				8A401B3AD625F45007EE7394 /* [CP] Check Pods Manifest.lock */,
+				CE84451C29AF097B00231703 /* Sources */,
+				CE84451D29AF097B00231703 /* Frameworks */,
+				CE84451E29AF097B00231703 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE84452229AF097B00231703 /* PBXTargetDependency */,
+			);
+			name = "TmdbMVVM-IBTests";
+			productName = "TmdbMVVM-IBTests";
+			productReference = CE84452029AF097B00231703 /* TmdbMVVM-IBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE84452A29AF097B00231703 /* TmdbMVVM-IBUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE84453A29AF097B00231703 /* Build configuration list for PBXNativeTarget "TmdbMVVM-IBUITests" */;
+			buildPhases = (
+				8DA4B9B3DA75C1C452DAAB99 /* [CP] Check Pods Manifest.lock */,
+				CE84452729AF097B00231703 /* Sources */,
+				CE84452829AF097B00231703 /* Frameworks */,
+				CE84452929AF097B00231703 /* Resources */,
+				D59F333178BDDC53DB4AC825 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE84452D29AF097B00231703 /* PBXTargetDependency */,
+			);
+			name = "TmdbMVVM-IBUITests";
+			productName = "TmdbMVVM-IBUITests";
+			productReference = CE84452B29AF097B00231703 /* TmdbMVVM-IBUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE84450229AF096C00231703 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					CE84450929AF096C00231703 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					CE84451F29AF097B00231703 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = CE84450929AF096C00231703;
+					};
+					CE84452A29AF097B00231703 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = CE84450929AF096C00231703;
+					};
+				};
+			};
+			buildConfigurationList = CE84450529AF096C00231703 /* Build configuration list for PBXProject "TmdbMVVM-IB" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE84450129AF096C00231703;
+			productRefGroup = CE84450B29AF096C00231703 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE84450929AF096C00231703 /* TmdbMVVM-IB */,
+				CE84451F29AF097B00231703 /* TmdbMVVM-IBTests */,
+				CE84452A29AF097B00231703 /* TmdbMVVM-IBUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE84450829AF096C00231703 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE84468729AF7A5100231703 /* ReviewTVC.xib in Resources */,
+				CE84451A29AF097A00231703 /* LaunchScreen.storyboard in Resources */,
+				CE84451729AF097A00231703 /* Assets.xcassets in Resources */,
+				CE84451529AF096D00231703 /* Main.storyboard in Resources */,
+				CE84464229AF39D200231703 /* SingleRowTVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE84451E29AF097B00231703 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE84452929AF097B00231703 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FD4762AFDA0C846A18E2B95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		848B02384862611B0FBD1F23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TmdbMVVM-IB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A401B3AD625F45007EE7394 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TmdbMVVM-IBTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DA4B9B3DA75C1C452DAAB99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D59F333178BDDC53DB4AC825 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests/Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE84450629AF096C00231703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE84462229AF329D00231703 /* ReviewResponse.swift in Sources */,
+				CE8445CA29AF179F00231703 /* Router.swift in Sources */,
+				CE84465029AF4B0400231703 /* MovieByGenreVM.swift in Sources */,
+				CE8445E229AF303100231703 /* BaseVM.swift in Sources */,
+				CE8445E729AF305C00231703 /* GenreVM.swift in Sources */,
+				CE8445A229AF11E800231703 /* Box.swift in Sources */,
+				CE84457E29AF0F8900231703 /* BuildConfiguration.swift in Sources */,
+				CE84464129AF39D200231703 /* SingleRowTVC.swift in Sources */,
+				CE84460929AF31D600231703 /* ProductionCountry.swift in Sources */,
+				CE8445C429AF14CA00231703 /* UIViewController+Ext.swift in Sources */,
+				CE84461D29AF327400231703 /* Review.swift in Sources */,
+				CE8445AB29AF12D600231703 /* BaseVC.swift in Sources */,
+				CE84460E29AF31FC00231703 /* ProductionCompany.swift in Sources */,
+				CE84464829AF49F300231703 /* MovieByGenreVC.swift in Sources */,
+				CE84461829AF324D00231703 /* AuthorDetails.swift in Sources */,
+				CE84468629AF7A5100231703 /* ReviewTVC.swift in Sources */,
+				CE8445BC29AF13D200231703 /* GenreVC.swift in Sources */,
+				CE84467129AF67FC00231703 /* MovieDetailVM.swift in Sources */,
+				CE84466929AF67E600231703 /* MovieDetailVC.swift in Sources */,
+				CE84454829AF0A9400231703 /* Coordinator.swift in Sources */,
+				CE84455029AF0ADA00231703 /* AppCoordinator.swift in Sources */,
+				CE8445B429AF134100231703 /* UIColor+Ext.swift in Sources */,
+				CE84450E29AF096C00231703 /* AppDelegate.swift in Sources */,
+				CE84455529AF0B2500231703 /* Storyboarded.swift in Sources */,
+				CE84467F29AF76A200231703 /* MovieReviewVM.swift in Sources */,
+				CE84461329AF322300231703 /* MovieDetailsResponse.swift in Sources */,
+				CE8445F529AF30E600231703 /* DiscoverMovieByGenreResponse.swift in Sources */,
+				CE84467729AF766800231703 /* MovieReviewVC.swift in Sources */,
+				CE8445FA29AF311A00231703 /* GenreResponse.swift in Sources */,
+				CE8446A029B0282500231703 /* MovieTrailerVM.swift in Sources */,
+				CE84462729AF32D100231703 /* Trailer.swift in Sources */,
+				CE84462C29AF32FC00231703 /* TrailerResponse.swift in Sources */,
+				CE84460429AF31AB00231703 /* SpokenLanguage.swift in Sources */,
+				CE84469829B027FF00231703 /* MovieTrailerVC.swift in Sources */,
+				CE8445ED29AF30B500231703 /* Genre.swift in Sources */,
+				CE8445FF29AF314600231703 /* Movie.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE84451C29AF097B00231703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE84452529AF097B00231703 /* TmdbMVVM_IBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE84452729AF097B00231703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE84453029AF097B00231703 /* TmdbMVVM_IBUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE84452229AF097B00231703 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE84450929AF096C00231703 /* TmdbMVVM-IB */;
+			targetProxy = CE84452129AF097B00231703 /* PBXContainerItemProxy */;
+		};
+		CE84452D29AF097B00231703 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE84450929AF096C00231703 /* TmdbMVVM-IB */;
+			targetProxy = CE84452C29AF097B00231703 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE84451329AF096D00231703 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE84451429AF096D00231703 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE84451829AF097A00231703 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE84451929AF097A00231703 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE84453229AF097B00231703 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug Staging";
+		};
+		CE84453329AF097B00231703 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Staging";
+		};
+		CE84453529AF097B00231703 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFC133C69DFD92F5B4A428D1 /* Pods-TmdbMVVM-IB.debug staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging";
+				PRODUCT_NAME = "$(TARGET_NAME) Staging";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug Staging";
+		};
+		CE84453629AF097B00231703 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C88FFBCD2731D7BF2759B185 /* Pods-TmdbMVVM-IB.release staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging";
+				PRODUCT_NAME = "$(TARGET_NAME) Staging";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release Staging";
+		};
+		CE84453829AF097B00231703 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7602A68D62C6F041B5FDD7CB /* Pods-TmdbMVVM-IBTests.debug staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TmdbMVVM-IB.app/TmdbMVVM-IB";
+			};
+			name = "Debug Staging";
+		};
+		CE84453929AF097B00231703 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80A548A3F80CFE2CAC33BD7F /* Pods-TmdbMVVM-IBTests.release staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TmdbMVVM-IB.app/TmdbMVVM-IB";
+			};
+			name = "Release Staging";
+		};
+		CE84453B29AF097B00231703 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9257438D0DAE7FB5BF66A9D1 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "TmdbMVVM-IB";
+			};
+			name = "Debug Staging";
+		};
+		CE84453C29AF097B00231703 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E19888F4EFD34BB0B23690A /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "TmdbMVVM-IB";
+			};
+			name = "Release Staging";
+		};
+		CE84456929AF0E3600231703 /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug Production";
+		};
+		CE84456A29AF0E3600231703 /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C86AA6005107FC6196B80037 /* Pods-TmdbMVVM-IB.debug production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug Production";
+		};
+		CE84456B29AF0E3600231703 /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33CFC2CF80B34788A7FE56C9 /* Pods-TmdbMVVM-IBTests.debug production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TmdbMVVM-IB.app/TmdbMVVM-IB";
+			};
+			name = "Debug Production";
+		};
+		CE84456C29AF0E3600231703 /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DB192A310266CBDF98A9B48 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "TmdbMVVM-IB";
+			};
+			name = "Debug Production";
+		};
+		CE84456D29AF0E3B00231703 /* Debug Verify */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug Verify";
+		};
+		CE84456E29AF0E3B00231703 /* Debug Verify */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 342219A0930D41A4A5EDA8CA /* Pods-TmdbMVVM-IB.debug verify.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify";
+				PRODUCT_NAME = "$(TARGET_NAME) Verify";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug Verify";
+		};
+		CE84456F29AF0E3B00231703 /* Debug Verify */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F89B5407C35E2682668ED4E2 /* Pods-TmdbMVVM-IBTests.debug verify.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TmdbMVVM-IB.app/TmdbMVVM-IB";
+			};
+			name = "Debug Verify";
+		};
+		CE84457029AF0E3B00231703 /* Debug Verify */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0749E36EE79C273E061F636E /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.debug verify.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "TmdbMVVM-IB";
+			};
+			name = "Debug Verify";
+		};
+		CE84457129AF0E6A00231703 /* Release Verify */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Verify";
+		};
+		CE84457229AF0E6A00231703 /* Release Verify */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6400D13802083F5C48CC372D /* Pods-TmdbMVVM-IB.release verify.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify";
+				PRODUCT_NAME = "$(TARGET_NAME) Verify";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release Verify";
+		};
+		CE84457329AF0E6A00231703 /* Release Verify */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00D66C62817EB41B8B0C6F2F /* Pods-TmdbMVVM-IBTests.release verify.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TmdbMVVM-IB.app/TmdbMVVM-IB";
+			};
+			name = "Release Verify";
+		};
+		CE84457429AF0E6A00231703 /* Release Verify */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8443709E3775E4667EF82469 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release verify.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "TmdbMVVM-IB";
+			};
+			name = "Release Verify";
+		};
+		CE84457529AF0E6E00231703 /* Release Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Production";
+		};
+		CE84457629AF0E6E00231703 /* Release Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5A255C446D7F97B643F325 /* Pods-TmdbMVVM-IB.release production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release Production";
+		};
+		CE84457729AF0E6E00231703 /* Release Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 178CE298CFB09A247CD7F34E /* Pods-TmdbMVVM-IBTests.release production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TmdbMVVM-IB.app/TmdbMVVM-IB";
+			};
+			name = "Release Production";
+		};
+		CE84457829AF0E6E00231703 /* Release Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B808D3E346ABC6F206CDC808 /* Pods-TmdbMVVM-IB-TmdbMVVM-IBUITests.release production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q63MQDT7DY;
+				INFOPLIST_FILE = "TmdbMVVM-IBUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IBUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "TmdbMVVM-IB";
+			};
+			name = "Release Production";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE84450529AF096C00231703 /* Build configuration list for PBXProject "TmdbMVVM-IB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE84453229AF097B00231703 /* Debug Staging */,
+				CE84456D29AF0E3B00231703 /* Debug Verify */,
+				CE84456929AF0E3600231703 /* Debug Production */,
+				CE84453329AF097B00231703 /* Release Staging */,
+				CE84457129AF0E6A00231703 /* Release Verify */,
+				CE84457529AF0E6E00231703 /* Release Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release Staging";
+		};
+		CE84453429AF097B00231703 /* Build configuration list for PBXNativeTarget "TmdbMVVM-IB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE84453529AF097B00231703 /* Debug Staging */,
+				CE84456E29AF0E3B00231703 /* Debug Verify */,
+				CE84456A29AF0E3600231703 /* Debug Production */,
+				CE84453629AF097B00231703 /* Release Staging */,
+				CE84457229AF0E6A00231703 /* Release Verify */,
+				CE84457629AF0E6E00231703 /* Release Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release Staging";
+		};
+		CE84453729AF097B00231703 /* Build configuration list for PBXNativeTarget "TmdbMVVM-IBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE84453829AF097B00231703 /* Debug Staging */,
+				CE84456F29AF0E3B00231703 /* Debug Verify */,
+				CE84456B29AF0E3600231703 /* Debug Production */,
+				CE84453929AF097B00231703 /* Release Staging */,
+				CE84457329AF0E6A00231703 /* Release Verify */,
+				CE84457729AF0E6E00231703 /* Release Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release Staging";
+		};
+		CE84453A29AF097B00231703 /* Build configuration list for PBXNativeTarget "TmdbMVVM-IBUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE84453B29AF097B00231703 /* Debug Staging */,
+				CE84457029AF0E3B00231703 /* Debug Verify */,
+				CE84456C29AF0E3600231703 /* Debug Production */,
+				CE84453C29AF097B00231703 /* Release Staging */,
+				CE84457429AF0E6A00231703 /* Release Verify */,
+				CE84457829AF0E6E00231703 /* Release Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release Staging";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE84450229AF096C00231703 /* Project object */;
+}
