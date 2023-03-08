@@ -76,7 +76,7 @@ class MovieByGenreVC: BaseVC, Storyboarded {
     {
         let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
         
-        if let viewModel = viewModel, distance < 200 {
+        if distance < 200, let viewModel = viewModel {
             viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: (viewModel.page) + 1)
         }
     }
