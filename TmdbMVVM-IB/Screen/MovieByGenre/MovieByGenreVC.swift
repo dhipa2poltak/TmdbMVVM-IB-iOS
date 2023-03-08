@@ -36,8 +36,7 @@ class MovieByGenreVC: BaseVC, Storyboarded {
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .none
 
-        let nibTVC = UINib(nibName: nbName, bundle: nil)
-        tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
+        tableVw.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         
         tableVw.reloadData()
     }
@@ -89,11 +88,12 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SingleRowTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        cell.selectionStyle = .none
 
         let movie = viewModel.movies[indexPath.row]
-
-        cell.bindData(text: movie.title ?? "")
+        cell.textLabel?.text = movie.title ?? ""
 
         return cell
     }

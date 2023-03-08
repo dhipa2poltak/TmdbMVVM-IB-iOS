@@ -46,8 +46,7 @@ class GenreVC: BaseVC, Storyboarded {
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .none
 
-        let nibTVC = UINib(nibName: nbName, bundle: nil)
-        tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
+        tableVw.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 
     private func setupObserver() {
@@ -92,10 +91,12 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SingleRowTVC
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        cell.selectionStyle = .none
 
         if let genre = viewModel.genres?[indexPath.row] {
-            cell.bindData(text: genre.name ?? "")
+            cell.textLabel?.text = genre.name ?? ""
         }
 
         return cell
