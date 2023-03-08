@@ -215,7 +215,6 @@
 				CE8445C829AF178E00231703 /* Networking */,
 				CE84455929AF0BCA00231703 /* Screen */,
 				CE84463029AF397E00231703 /* UIComponent */,
-				CE84451629AF097A00231703 /* Assets.xcassets */,
 				CE84451B29AF097A00231703 /* Info.plist */,
 			);
 			path = "TmdbMVVM-IB";
@@ -242,6 +241,7 @@
 		CE84454329AF0A6500231703 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CE84451629AF097A00231703 /* Assets.xcassets */,
 				CE84451829AF097A00231703 /* LaunchScreen.storyboard */,
 				CE84451329AF096D00231703 /* Main.storyboard */,
 				CE84450D29AF096C00231703 /* AppDelegate.swift */,
