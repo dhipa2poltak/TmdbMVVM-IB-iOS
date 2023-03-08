@@ -10,6 +10,7 @@ import UIKit
 class AppCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    private let apiClient = ApiClient()
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -17,7 +18,7 @@ class AppCoordinator: Coordinator {
 
     func start() {
         let vc = GenreVC.instantiate()
-        vc.viewModel = GenreVM()
+        vc.viewModel = GenreVM(apiClient: apiClient)
         vc.coordinator = self
 
         navigationController.pushViewController(vc, animated: false)
@@ -25,7 +26,7 @@ class AppCoordinator: Coordinator {
 
     func showMovieByGenre(genreId: Int, genreName: String) {
         let vc = MovieByGenreVC.instantiate()
-        let viewModel = MovieByGenreVM()
+        let viewModel = MovieByGenreVM(apiClient: apiClient)
         viewModel.genreId = genreId
         viewModel.genreName = genreName
         vc.viewModel = viewModel
@@ -36,7 +37,7 @@ class AppCoordinator: Coordinator {
 
     func showMovieDetail(movieId: Int) {
         let vc = MovieDetailVC.instantiate()
-        let viewModel = MovieDetailVM()
+        let viewModel = MovieDetailVM(apiClient: apiClient)
         viewModel.movieId = movieId
         vc.viewModel = viewModel
         vc.coordinator = self
@@ -46,7 +47,7 @@ class AppCoordinator: Coordinator {
 
     func showMovieReview(movieId: Int, movieTitle: String) {
         let vc = MovieReviewVC.instantiate()
-        let viewModel = MovieReviewVM()
+        let viewModel = MovieReviewVM(apiClient: apiClient)
         viewModel.movieId = movieId
         viewModel.movieTitle = movieTitle
         vc.viewModel = viewModel
@@ -56,7 +57,7 @@ class AppCoordinator: Coordinator {
 
     func showMovieTrailer(movieId: Int) {
         let vc = MovieTrailerVC.instantiate()
-        let viewModel = MovieTrailerVM()
+        let viewModel = MovieTrailerVM(apiClient: apiClient)
         viewModel.movieId = movieId
         vc.viewModel = viewModel
 
