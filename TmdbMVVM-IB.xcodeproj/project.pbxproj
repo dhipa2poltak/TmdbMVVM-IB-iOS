@@ -91,7 +91,7 @@
 		BFAB9398B026A8091E953855 /* Pods_TmdbMVVM_IB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TmdbMVVM_IB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86AA6005107FC6196B80037 /* Pods-TmdbMVVM-IB.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.debug production.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.debug production.xcconfig"; sourceTree = "<group>"; };
 		C88FFBCD2731D7BF2759B185 /* Pods-TmdbMVVM-IB.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TmdbMVVM-IB.release staging.xcconfig"; path = "Target Support Files/Pods-TmdbMVVM-IB/Pods-TmdbMVVM-IB.release staging.xcconfig"; sourceTree = "<group>"; };
-		CE84450A29AF096C00231703 /* TmdbMVVM-IB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "TmdbMVVM-IB.app"; path = "TmdbMVVM-IB Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE84450A29AF096C00231703 /* TmdbMVVM-IB Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-IB Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE84450D29AF096C00231703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE84451429AF096D00231703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE84451629AF097A00231703 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		CE84450B29AF096C00231703 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE84450A29AF096C00231703 /* TmdbMVVM-IB.app */,
+				CE84450A29AF096C00231703 /* TmdbMVVM-IB Staging.app */,
 				CE84452029AF097B00231703 /* TmdbMVVM-IBTests.xctest */,
 				CE84452B29AF097B00231703 /* TmdbMVVM-IBUITests.xctest */,
 			);
@@ -215,7 +215,6 @@
 				CE8445C829AF178E00231703 /* Networking */,
 				CE84455929AF0BCA00231703 /* Screen */,
 				CE84463029AF397E00231703 /* UIComponent */,
-				CE84451B29AF097A00231703 /* Info.plist */,
 			);
 			path = "TmdbMVVM-IB";
 			sourceTree = "<group>";
@@ -248,6 +247,7 @@
 				CE84454729AF0A9400231703 /* Coordinator.swift */,
 				CE84454F29AF0ADA00231703 /* AppCoordinator.swift */,
 				CE84455429AF0B2500231703 /* Storyboarded.swift */,
+				CE84451B29AF097A00231703 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -433,7 +433,7 @@
 			);
 			name = "TmdbMVVM-IB";
 			productName = "TmdbMVVM-IB";
-			productReference = CE84450A29AF096C00231703 /* TmdbMVVM-IB.app */;
+			productReference = CE84450A29AF096C00231703 /* TmdbMVVM-IB Staging.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CE84451F29AF097B00231703 /* TmdbMVVM-IBTests */ = {
@@ -867,7 +867,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -887,7 +887,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1056,7 +1056,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1181,7 +1181,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1300,7 +1300,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1419,7 +1419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
