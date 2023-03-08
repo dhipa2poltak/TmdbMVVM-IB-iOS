@@ -17,6 +17,7 @@ class AppCoordinator: Coordinator {
 
     func start() {
         let vc = GenreVC.instantiate()
+        vc.viewModel = GenreVM()
         vc.coordinator = self
 
         navigationController.pushViewController(vc, animated: false)
@@ -24,8 +25,10 @@ class AppCoordinator: Coordinator {
 
     func showMovieByGenre(genreId: Int, genreName: String) {
         let vc = MovieByGenreVC.instantiate()
-        vc.viewModel.genreId = genreId
-        vc.viewModel.genreName = genreName
+        let viewModel = MovieByGenreVM()
+        viewModel.genreId = genreId
+        viewModel.genreName = genreName
+        vc.viewModel = viewModel
         vc.coordinator = self
 
         navigationController.pushViewController(vc, animated: true)
@@ -33,7 +36,9 @@ class AppCoordinator: Coordinator {
 
     func showMovieDetail(movieId: Int) {
         let vc = MovieDetailVC.instantiate()
-        vc.viewModel.movieId = movieId
+        let viewModel = MovieDetailVM()
+        viewModel.movieId = movieId
+        vc.viewModel = viewModel
         vc.coordinator = self
 
         navigationController.pushViewController(vc, animated: true)
@@ -41,15 +46,19 @@ class AppCoordinator: Coordinator {
 
     func showMovieReview(movieId: Int, movieTitle: String) {
         let vc = MovieReviewVC.instantiate()
-        vc.viewModel.movieId = movieId
-        vc.viewModel.movieTitle = movieTitle
+        let viewModel = MovieReviewVM()
+        viewModel.movieId = movieId
+        viewModel.movieTitle = movieTitle
+        vc.viewModel = viewModel
 
         navigationController.pushViewController(vc, animated: true)
     }
 
     func showMovieTrailer(movieId: Int) {
         let vc = MovieTrailerVC.instantiate()
-        vc.viewModel.movieId = movieId
+        let viewModel = MovieTrailerVM()
+        viewModel.movieId = movieId
+        vc.viewModel = viewModel
 
         navigationController.pushViewController(vc, animated: true)
     }

@@ -13,7 +13,7 @@ class MovieTrailerVC: BaseVC, Storyboarded, YouTubePlayerDelegate {
 
     @IBOutlet weak var youtubePlayer: YouTubePlayerView!
 
-    let viewModel = MovieTrailerVM()
+    var viewModel: MovieTrailerVM?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,13 @@ class MovieTrailerVC: BaseVC, Storyboarded, YouTubePlayerDelegate {
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
 
-        viewModel.fetchMovieTrailer(movieId: viewModel.movieId)
+        if let viewModel = viewModel {
+            viewModel.fetchMovieTrailer(movieId: viewModel.movieId)
+        }
     }
 
     private func setupObserver() {
-        viewModel.isShowDialogLoading.bind { value in
+        viewModel?.isShowDialogLoading.bind { value in
             if value {
                 SVProgressHUD.show()
             } else {
@@ -37,14 +39,14 @@ class MovieTrailerVC: BaseVC, Storyboarded, YouTubePlayerDelegate {
             }
         }
 
-        viewModel.toastMessage.bind { [weak self] value in
+        viewModel?.toastMessage.bind { [weak self] value in
             if !value.isEmpty {
                 self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
-                self?.viewModel.toastMessage.value = ""
+                self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel.movieKey.bind { [weak self] value in
+        viewModel?.movieKey.bind { [weak self] value in
             if !value.isEmpty {
                 self?.youtubePlayer.loadVideoID(value)
             }

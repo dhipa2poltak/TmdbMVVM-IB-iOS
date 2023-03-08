@@ -16,7 +16,7 @@ class MovieDetailVC: BaseVC, Storyboarded {
     @IBOutlet weak var ivMovie: UIImageView!
     @IBOutlet weak var lblDesc: UILabel!
 
-    let viewModel = MovieDetailVM()
+    var viewModel: MovieDetailVM?
     weak var coordinator: AppCoordinator?
 
     override func viewDidLoad() {
@@ -28,12 +28,12 @@ class MovieDetailVC: BaseVC, Storyboarded {
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
 
-        viewModel.fetchMovieDetail(movieId: viewModel.movieId)
+        viewModel?.fetchMovieDetail(movieId: viewModel?.movieId ?? -1)
     }
 
 
     private func setupObserver() {
-        viewModel.isShowDialogLoading.bind { value in
+        viewModel?.isShowDialogLoading.bind { value in
             if value {
                 SVProgressHUD.show()
             } else {
@@ -41,35 +41,35 @@ class MovieDetailVC: BaseVC, Storyboarded {
             }
         }
 
-        viewModel.toastMessage.bind { [weak self] value in
+        viewModel?.toastMessage.bind { [weak self] value in
             if !value.isEmpty {
                 self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
-                self?.viewModel.toastMessage.value = ""
+                self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel.titleMovie.bind { [weak self] value in
+        viewModel?.titleMovie.bind { [weak self] value in
             self?.lblTitleMovie.text = value
         }
 
-        viewModel.urlImage.bind { [weak self] value in
+        viewModel?.urlImage.bind { [weak self] value in
             self?.ivMovie.kf.setImage(with: URL(string: value))
         }
 
-        viewModel.descMovie.bind { [weak self] value in
+        viewModel?.descMovie.bind { [weak self] value in
             self?.lblDesc.text = value
         }
     }
 
     @IBAction func onClickShowReview(_ sender: UIButton) {
-        let movieId = viewModel.movieId
-        let movieTitle = viewModel.movieDetailsResponse?.title ?? "unknown"
+        let movieId = viewModel?.movieId ?? -1
+        let movieTitle = viewModel?.movieDetailsResponse?.title ?? "unknown"
 
         coordinator?.showMovieReview(movieId: movieId, movieTitle: movieTitle)
     }
 
     @IBAction func onClickShowTrailer(_ sender: UIButton) {
-        let movieId = viewModel.movieId
+        let movieId = viewModel?.movieId ?? -1
 
         coordinator?.showMovieTrailer(movieId: movieId)
     }

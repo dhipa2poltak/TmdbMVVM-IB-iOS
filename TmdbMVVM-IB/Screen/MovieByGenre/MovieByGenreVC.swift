@@ -14,7 +14,7 @@ class MovieByGenreVC: BaseVC, Storyboarded {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tableVw: UITableView!
 
-    let viewModel = MovieByGenreVM()
+    var viewModel: MovieByGenreVM?
     weak var coordinator: AppCoordinator?
 
     private let nbName = "SingleRowTVC"
@@ -24,43 +24,41 @@ class MovieByGenreVC: BaseVC, Storyboarded {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        if !viewModel.genreName.isEmpty {
-            lblTitle.text = "Genre \(viewModel.genreName) Movies"
+        if !(viewModel?.genreName.isEmpty ?? true) {
+            lblTitle.text = "Genre \(viewModel?.genreName ?? "unknown") Movies"
         }
 
         setupObserver()
 
         tableVw.delegate = self
         tableVw.dataSource = self
-
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .none
-
         tableVw.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         
         tableVw.reloadData()
     }
 
     private func setupObserver() {
-        viewModel.isShowDialogLoading.bind { [weak self] value in
-            if value && self?.viewModel.movies.isEmpty ?? true {
+        viewModel?.isShowDialogLoading.bind { [weak self] value in
+            if value && self?.viewModel?.movies.isEmpty ?? true {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
             }
         }
 
-        viewModel.toastMessage.bind { [weak self] value in
+        viewModel?.toastMessage.bind { [weak self] value in
             if !value.isEmpty {
                 self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
-                self?.viewModel.toastMessage.value = ""
+                self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel.movieData.bind { [weak self] value in
+        viewModel?.movieData.bind { [weak self] value in
             if let theValue = value, theValue {
                 self?.tableVw.reloadData()
-                self?.viewModel.movieData.value = nil
+                self?.viewModel?.movieData.value = nil
             }
         }
     }
@@ -68,7 +66,9 @@ class MovieByGenreVC: BaseVC, Storyboarded {
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
 
-        viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: viewModel.page)
+        if let viewModel = viewModel {
+            viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: viewModel.page)
+        }
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
@@ -76,15 +76,15 @@ class MovieByGenreVC: BaseVC, Storyboarded {
     {
         let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
         
-        if distance < 200 {
-            viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: viewModel.page + 1)
+        if let viewModel = viewModel, distance < 200 {
+            viewModel.fetchMovieGenre(genreId: String(viewModel.genreId), page: (viewModel.page) + 1)
         }
     }
 }
 
 extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.movies.count
+        return viewModel?.movies.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,14 +92,14 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
 
-        let movie = viewModel.movies[indexPath.row]
-        cell.textLabel?.text = movie.title ?? ""
+        let movie = viewModel?.movies[indexPath.row]
+        cell.textLabel?.text = movie?.title ?? ""
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let movie = viewModel.movies[indexPath.row]
-        coordinator?.showMovieDetail(movieId: movie.id ?? -1)
+        let movie = viewModel?.movies[indexPath.row]
+        coordinator?.showMovieDetail(movieId: movie?.id ?? -1)
     }
 }
