@@ -28,24 +28,24 @@ class AppCoordinator: Coordinator {
             ApiClient()
         }.inObjectScope(.container)
 
-        self.container.register(GenreVM.self) { [weak self] _ in
-            GenreVM(apiClient: self?.container.resolve(ApiClient.self))
+        self.container.register(GenreVM.self) { resolver in
+            GenreVM(apiClient: resolver.resolve(ApiClient.self))
         }
 
-        self.container.register(MovieByGenreVM.self) { [weak self] _ in
-            MovieByGenreVM(apiClient: self?.container.resolve(ApiClient.self))
+        self.container.register(MovieByGenreVM.self) { resolver in
+            MovieByGenreVM(apiClient: resolver.resolve(ApiClient.self))
         }
 
-        self.container.register(MovieDetailVM.self) { [weak self] _ in
-            MovieDetailVM(apiClient: self?.container.resolve(ApiClient.self))
+        self.container.register(MovieDetailVM.self) { resolver in
+            MovieDetailVM(apiClient: resolver.resolve(ApiClient.self))
         }
 
-        self.container.register(MovieReviewVM.self) { [weak self] _ in
-            MovieReviewVM(apiClient: self?.container.resolve(ApiClient.self))
+        self.container.register(MovieReviewVM.self) { resolver in
+            MovieReviewVM(apiClient: resolver.resolve(ApiClient.self))
         }
 
-        self.container.register(MovieTrailerVM.self) { [weak self] _ in
-            MovieTrailerVM(apiClient: self?.container.resolve(ApiClient.self))
+        self.container.register(MovieTrailerVM.self) { resolver in
+            MovieTrailerVM(apiClient: resolver.resolve(ApiClient.self))
         }
     }
 
