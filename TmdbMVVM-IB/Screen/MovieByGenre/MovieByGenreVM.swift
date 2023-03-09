@@ -20,7 +20,7 @@ class MovieByGenreVM: BaseVM {
     var genreName = ""
     var page = 1
 
-    init(apiClient: ApiClient) {
+    init(apiClient: ApiClient?) {
         self.apiClient = apiClient
     }
 

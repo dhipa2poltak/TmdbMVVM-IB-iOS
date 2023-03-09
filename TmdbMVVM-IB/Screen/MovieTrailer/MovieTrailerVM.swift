@@ -16,7 +16,7 @@ class MovieTrailerVM: BaseVM {
     var movieId = -1
     let movieKey = Box("")
 
-    init(apiClient: ApiClient) {
+    init(apiClient: ApiClient?) {
         self.apiClient = apiClient
     }
 

@@ -20,7 +20,7 @@ class MovieDetailVM: BaseVM {
     let urlImage = Box("")
     let descMovie = Box("")
 
-    init(apiClient: ApiClient) {
+    init(apiClient: ApiClient?) {
         self.apiClient = apiClient
     }
 

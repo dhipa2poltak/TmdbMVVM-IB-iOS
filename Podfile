@@ -24,6 +24,8 @@ target 'TmdbMVVM-IB' do
   pod 'RxSwift',    '~> 6.0.0'
   pod 'RxCocoa',    '~> 6.0.0'
 
+  pod 'Swinject', '2.8.3'
+
   target 'TmdbMVVM-IBTests' do
     inherit! :search_paths
     # Pods for testing

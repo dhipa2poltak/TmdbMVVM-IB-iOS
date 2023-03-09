@@ -6,6 +6,7 @@
 - Environments are implemented by using Build Scheme and Build Configurations of XCode (single target)
 - MVVM Architecture Pattern
 - Coordinator Pattern (Simple)
+- Swinject DI
 - Box Binding
 - RxSwift
 - Alamofire

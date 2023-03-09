@@ -66,6 +66,9 @@ class MovieReviewVC: BaseVC, Storyboarded {
             if value != nil {
                 self?.tableVw.reloadData()
                 self?.viewModel?.reviewData.value = nil
+
+                let isEmpty = self?.viewModel?.reviews.isEmpty ?? true
+                self?.tableVw.isHidden = isEmpty
             }
         }
     }

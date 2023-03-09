@@ -16,7 +16,7 @@ class GenreVM: BaseVM {
     var genres: [Genre]?
     let genreData: Box<Bool?> = Box(false)
 
-    init(apiClient: ApiClient) {
+    init(apiClient: ApiClient?) {
         self.apiClient = apiClient
     }
 
