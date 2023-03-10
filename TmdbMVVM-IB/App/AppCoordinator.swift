@@ -32,20 +32,34 @@ class AppCoordinator: Coordinator {
             GenreVM(apiClient: resolver.resolve(ApiClient.self))
         }
 
-        self.container.register(MovieByGenreVM.self) { resolver in
-            MovieByGenreVM(apiClient: resolver.resolve(ApiClient.self))
+        self.container.register(MovieByGenreVM.self) { (resolver, genreId: Int, genreName: String) in
+            let vm = MovieByGenreVM(apiClient: resolver.resolve(ApiClient.self))
+            vm.genreId = genreId
+            vm.genreName = genreName
+
+            return vm
         }
 
-        self.container.register(MovieDetailVM.self) { resolver in
-            MovieDetailVM(apiClient: resolver.resolve(ApiClient.self))
+        self.container.register(MovieDetailVM.self) { (resolver, movieId: Int) in
+            let vm = MovieDetailVM(apiClient: resolver.resolve(ApiClient.self))
+            vm.movieId = movieId
+
+            return vm
         }
 
-        self.container.register(MovieReviewVM.self) { resolver in
-            MovieReviewVM(apiClient: resolver.resolve(ApiClient.self))
+        self.container.register(MovieReviewVM.self) { (resolver, movieId: Int, movieTitle: String) in
+            let vm = MovieReviewVM(apiClient: resolver.resolve(ApiClient.self))
+            vm.movieId = movieId
+            vm.movieTitle = movieTitle
+
+            return vm
         }
 
-        self.container.register(MovieTrailerVM.self) { resolver in
-            MovieTrailerVM(apiClient: resolver.resolve(ApiClient.self))
+        self.container.register(MovieTrailerVM.self) { (resolver, movieId: Int) in
+            let vm = MovieTrailerVM(apiClient: resolver.resolve(ApiClient.self))
+            vm.movieId = movieId
+
+            return vm
         }
     }
 
@@ -59,9 +73,7 @@ class AppCoordinator: Coordinator {
 
     func showMovieByGenre(genreId: Int, genreName: String) {
         let vc = MovieByGenreVC.instantiate()
-        let viewModel = container.resolve(MovieByGenreVM.self)
-        viewModel?.genreId = genreId
-        viewModel?.genreName = genreName
+        let viewModel = container.resolve(MovieByGenreVM.self, arguments: genreId, genreName)
         vc.viewModel = viewModel
         vc.coordinator = container.resolve(AppCoordinator.self)
 
@@ -70,8 +82,7 @@ class AppCoordinator: Coordinator {
 
     func showMovieDetail(movieId: Int) {
         let vc = MovieDetailVC.instantiate()
-        let viewModel = container.resolve(MovieDetailVM.self)
-        viewModel?.movieId = movieId
+        let viewModel = container.resolve(MovieDetailVM.self, argument: movieId)
         vc.viewModel = viewModel
         vc.coordinator = container.resolve(AppCoordinator.self)
 
@@ -80,9 +91,7 @@ class AppCoordinator: Coordinator {
 
     func showMovieReview(movieId: Int, movieTitle: String) {
         let vc = MovieReviewVC.instantiate()
-        let viewModel = container.resolve(MovieReviewVM.self)
-        viewModel?.movieId = movieId
-        viewModel?.movieTitle = movieTitle
+        let viewModel = container.resolve(MovieReviewVM.self, arguments: movieId, movieTitle)
         vc.viewModel = viewModel
 
         navigationController.pushViewController(vc, animated: true)
@@ -90,8 +99,7 @@ class AppCoordinator: Coordinator {
 
     func showMovieTrailer(movieId: Int) {
         let vc = MovieTrailerVC.instantiate()
-        let viewModel = container.resolve(MovieTrailerVM.self)
-        viewModel?.movieId = movieId
+        let viewModel = container.resolve(MovieTrailerVM.self, argument: movieId)
         vc.viewModel = viewModel
 
         navigationController.pushViewController(vc, animated: true)
