@@ -40,23 +40,23 @@ class MovieByGenreVC: BaseVC, Storyboarded {
     }
 
     private func setupObserver() {
-        viewModel?.isShowDialogLoading.bind { [weak self] value in
-            if value && self?.viewModel?.movies.isEmpty ?? true {
+        viewModel?.isShowDialogLoading.bind { [weak self] isShowDialogLoading in
+            if isShowDialogLoading && self?.viewModel?.movies.isEmpty ?? true {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
             }
         }
 
-        viewModel?.toastMessage.bind { [weak self] value in
-            if !value.isEmpty {
-                self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
+        viewModel?.toastMessage.bind { [weak self] toastMessage in
+            if !toastMessage.isEmpty {
+                self?.showToast(message: toastMessage, font: .systemFont(ofSize: 12.0))
                 self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel?.movieData.bind { [weak self] value in
-            if let theValue = value, theValue {
+        viewModel?.movieData.bind { [weak self] movieData in
+            if let theMovieData = movieData, theMovieData {
                 self?.tableVw.reloadData()
                 self?.viewModel?.movieData.value = nil
             }

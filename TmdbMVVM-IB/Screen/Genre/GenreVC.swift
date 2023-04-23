@@ -49,23 +49,23 @@ class GenreVC: BaseVC, Storyboarded {
     }
 
     private func setupObserver() {
-        viewModel?.isShowDialogLoading.bind { value in
-            if value {
+        viewModel?.isShowDialogLoading.bind { isShowDialogLoading in
+            if isShowDialogLoading {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
             }
         }
 
-        viewModel?.toastMessage.bind { [weak self] value in
-            if !value.isEmpty {
-                self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
+        viewModel?.toastMessage.bind { [weak self] toastMessage in
+            if !toastMessage.isEmpty {
+                self?.showToast(message: toastMessage, font: .systemFont(ofSize: 12.0))
                 self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel?.genreData.bind { [weak self] value in
-            if let theValue = value, theValue {
+        viewModel?.genreData.bind { [weak self] genreData in
+            if let theGenreData = genreData, theGenreData {
                 self?.refreshControl.endRefreshing()
                 self?.tableVw.reloadData()
                 self?.viewModel?.genreData.value = false
@@ -95,7 +95,7 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
 
         if let genre = viewModel?.genres?[indexPath.row] {
-            cell.textLabel?.text = genre.name ?? ""
+            cell.textLabel?.text = genre.name
         }
 
         return cell

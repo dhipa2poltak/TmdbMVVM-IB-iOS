@@ -33,17 +33,17 @@ class MovieDetailVC: BaseVC, Storyboarded {
 
 
     private func setupObserver() {
-        viewModel?.isShowDialogLoading.bind { value in
-            if value {
+        viewModel?.isShowDialogLoading.bind { isShowDialogLoading in
+            if isShowDialogLoading {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
             }
         }
 
-        viewModel?.toastMessage.bind { [weak self] value in
-            if !value.isEmpty {
-                self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
+        viewModel?.toastMessage.bind { [weak self] toastMessage in
+            if !toastMessage.isEmpty {
+                self?.showToast(message: toastMessage, font: .systemFont(ofSize: 12.0))
                 self?.viewModel?.toastMessage.value = ""
             }
         }

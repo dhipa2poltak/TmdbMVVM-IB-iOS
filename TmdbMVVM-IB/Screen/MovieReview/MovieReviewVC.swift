@@ -47,23 +47,23 @@ class MovieReviewVC: BaseVC, Storyboarded {
     }
 
     private func setupObserver() {
-        viewModel?.isShowDialogLoading.bind { [weak self] value in
-            if value && self?.viewModel?.reviews.isEmpty ?? true {
+        viewModel?.isShowDialogLoading.bind { [weak self] isShowDialogLoading in
+            if isShowDialogLoading && self?.viewModel?.reviews.isEmpty ?? true {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
             }
         }
 
-        viewModel?.toastMessage.bind { [weak self] value in
-            if !value.isEmpty {
-                self?.showToast(message: value, font: .systemFont(ofSize: 12.0))
+        viewModel?.toastMessage.bind { [weak self] toastMessage in
+            if !toastMessage.isEmpty {
+                self?.showToast(message: toastMessage, font: .systemFont(ofSize: 12.0))
                 self?.viewModel?.toastMessage.value = ""
             }
         }
 
-        viewModel?.reviewData.bind { [weak self] value in
-            if value != nil {
+        viewModel?.reviewData.bind { [weak self] reviewData in
+            if reviewData != nil {
                 self?.tableVw.reloadData()
                 self?.viewModel?.reviewData.value = nil
 
