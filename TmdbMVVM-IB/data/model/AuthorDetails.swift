@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AuthorDetails: Codable {
+struct AuthorDetails: Codable {
     let name: String?
     let username: String?
     let avatarPath: String?
@@ -21,10 +21,10 @@ class AuthorDetails: Codable {
     }
 
     init(
-        name: String?,
-        username: String?,
-        avatarPath: String?,
-        rating: Float?
+        name: String? = "",
+        username: String? = "",
+        avatarPath: String? = "",
+        rating: Float? = 0
     ) {
         self.name = name
         self.username = username

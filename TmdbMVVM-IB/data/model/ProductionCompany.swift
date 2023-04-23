@@ -7,11 +7,11 @@
 
 import Foundation
 
-class ProductionCompany: Codable {
+struct ProductionCompany: Codable {
     let name: String?
     let originCountry: String?
     let logoPath: String?
-    let id: Int?
+    let id: Int
 
     enum CodingKeys: String, CodingKey {
         case name
@@ -21,10 +21,10 @@ class ProductionCompany: Codable {
     }
 
     init(
-        name: String?,
-        originCountry: String?,
-        logoPath: String?,
-        id: Int?
+        name: String? = "",
+        originCountry: String? = "",
+        logoPath: String? = "",
+        id: Int = -1
     ) {
         self.name = name
         self.originCountry = originCountry

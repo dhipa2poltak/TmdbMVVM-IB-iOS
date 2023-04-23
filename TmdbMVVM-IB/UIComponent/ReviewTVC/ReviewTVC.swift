@@ -13,14 +13,10 @@ class ReviewTVC: UITableViewCell {
     @IBOutlet weak var ivAuthor: UIImageView!
     @IBOutlet weak var lblAuthor: UILabel!
 
-    func bindData(review: Review) {
+    func bindData(review: ReviewEntity) {
         lblContent.text = review.content
 
-        if var avatarPath = review.authorDetails?.avatarPath {
-            if avatarPath.starts(with: "/") {
-                avatarPath.remove(at: avatarPath.startIndex)
-            }
-
+        if let avatarPath = review.authorDetails?.avatarPath {
             ivAuthor.kf.setImage(with: URL(string: avatarPath))
         }
 

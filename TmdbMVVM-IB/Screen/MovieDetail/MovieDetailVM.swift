@@ -10,33 +10,33 @@ import RxSwift
 
 class MovieDetailVM: BaseVM {
 
-    private let apiClient: ApiClient?
+    private let getMovieDetailsUseCase: GetMovieDetailsUseCase?
     private let disposeBag = DisposeBag()
 
     var movieId = -1
-    var movieDetailsResponse: MovieDetailsResponse?
+    var movieDetailsDomain: MovieDetailsDomain?
 
     let titleMovie = Box("")
     let urlImage = Box("")
     let descMovie = Box("")
 
-    init(apiClient: ApiClient?) {
-        self.apiClient = apiClient
+    init(getMovieDetailsUseCase: GetMovieDetailsUseCase?) {
+        self.getMovieDetailsUseCase = getMovieDetailsUseCase
     }
 
     func fetchMovieDetail(movieId: Int) {
         isShowDialogLoading.value = true
 
-        apiClient?.fetchMovieDetail(movieId: movieId)
+        getMovieDetailsUseCase?.call(movieId: movieId)
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] response in
+            .subscribe(onNext: { [weak self] domain in
                 self?.isShowDialogLoading.value = false
                 
-                self?.movieDetailsResponse = response
+                self?.movieDetailsDomain = domain
 
-                self?.titleMovie.value = response.title ?? ""
-                self?.urlImage.value = BuildConfiguration.shared.IMAGE_URL_BASE_PATH + (response.posterPath ?? "")
-                self?.descMovie.value = response.overview ?? ""
+                self?.titleMovie.value = domain.title
+                self?.urlImage.value = domain.imageUrl
+                self?.descMovie.value = domain.overview
             }, onError: { [weak self] error in
                 self?.isShowDialogLoading.value = false
 

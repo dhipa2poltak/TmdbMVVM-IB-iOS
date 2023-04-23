@@ -48,22 +48,24 @@ class MovieDetailVC: BaseVC, Storyboarded {
             }
         }
 
-        viewModel?.titleMovie.bind { [weak self] value in
-            self?.lblTitleMovie.text = value
+        viewModel?.titleMovie.bind { [weak self] titleMovie in
+            self?.lblTitleMovie.text = titleMovie
         }
 
-        viewModel?.urlImage.bind { [weak self] value in
-            self?.ivMovie.kf.setImage(with: URL(string: value))
+        viewModel?.urlImage.bind { [weak self] urlImage in
+            if !urlImage.isEmpty {
+                self?.ivMovie.kf.setImage(with: URL(string: urlImage))
+            }
         }
 
-        viewModel?.descMovie.bind { [weak self] value in
-            self?.lblDesc.text = value
+        viewModel?.descMovie.bind { [weak self] descMovie in
+            self?.lblDesc.text = descMovie
         }
     }
 
     @IBAction func onClickShowReview(_ sender: UIButton) {
         let movieId = viewModel?.movieId ?? -1
-        let movieTitle = viewModel?.movieDetailsResponse?.title ?? "unknown"
+        let movieTitle = viewModel?.movieDetailsDomain?.title ?? "unknown"
 
         coordinator?.showMovieReview(movieId: movieId, movieTitle: movieTitle)
     }

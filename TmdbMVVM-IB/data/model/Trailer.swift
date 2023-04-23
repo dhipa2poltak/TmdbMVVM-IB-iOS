@@ -7,15 +7,15 @@
 
 import Foundation
 
-class Trailer: Codable {
-    let id: String?
-    let iso6391: String?
-    let iso31661: String?
-    let key: String?
-    let name: String?
-    let site: String?
-    let size: Int?
-    let type: String?
+struct Trailer: Codable {
+    let id: String
+    let iso6391: String
+    let iso31661: String
+    let key: String
+    let name: String
+    let site: String
+    let size: Int
+    let type: String
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -29,14 +29,14 @@ class Trailer: Codable {
     }
 
     init(
-        id: String?,
-        iso6391: String?,
-        iso31661: String?,
-        key: String?,
-        name: String?,
-        site: String?,
-        size: Int?,
-        type: String?
+        id: String = "",
+        iso6391: String = "",
+        iso31661: String = "",
+        key: String = "",
+        name: String = "",
+        site: String = "",
+        size: Int = -1,
+        type: String = ""
     ) {
         self.id = id
         self.iso6391 = iso6391

@@ -7,16 +7,16 @@
 
 import Foundation
 
-class Genre: Codable {
-    let id: Int?
-    let name: String?
+struct Genre: Codable {
+    let id: Int
+    let name: String
 
     enum CodingKeys: String, CodingKey {
         case id
         case name
     }
 
-    init(id: Int?, name: String?) {
+    init(id: Int = -1, name: String = "") {
         self.id = id
         self.name = name
     }

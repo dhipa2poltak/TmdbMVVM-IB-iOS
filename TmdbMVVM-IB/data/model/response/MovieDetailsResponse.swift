@@ -7,32 +7,32 @@
 
 import Foundation
 
-class MovieDetailsResponse: Codable {
-    let adult: Bool?
-    let backdropPath: String?
+struct MovieDetailsResponse: Codable {
+    let adult: Bool
+    let backdropPath: String
     //let belongs_to_collection: Any?
-    let budget: Int?
-    let genres: [Genre]?
-    let homepage: String?
-    let id: Int?
-    let imdbId: String?
-    let originalLanguage: String?
-    let originalTitle: String?
-    let overview: String?
-    let popularity: Float?
-    let posterPath: String?
-    let productionCompanies: [ProductionCompany]?
-    let productionCountries: [ProductionCountry]?
-    let releaseDate: String?
-    let revenue: Int?
-    let runtime: Int?
-    let spokenLanguages: [SpokenLanguage]?
-    let status: String?
-    let tagline: String?
-    let title: String?
-    let video: Bool?
-    let voteAverage: Float?
-    let voteCount: Int?
+    let budget: Int
+    let genres: [Genre]
+    let homepage: String
+    let id: Int
+    let imdbId: String
+    let originalLanguage: String
+    let originalTitle: String
+    let overview: String
+    let popularity: Float
+    let posterPath: String
+    let productionCompanies: [ProductionCompany]
+    let productionCountries: [ProductionCountry]
+    let releaseDate: String
+    let revenue: Int
+    let runtime: Int
+    let spokenLanguages: [SpokenLanguage]
+    let status: String
+    let tagline: String
+    let title: String
+    let video: Bool
+    let voteAverage: Float
+    let voteCount: Int
 
     enum CodingKeys: String, CodingKey {
         case adult
@@ -63,31 +63,31 @@ class MovieDetailsResponse: Codable {
     }
 
     init(
-        adult: Bool?,
-        backdropPath: String?,
+        adult: Bool = false,
+        backdropPath: String = "",
         //belongs_to_collection: Any?,
-        budget: Int?,
-        genres: [Genre]?,
-        homepage: String?,
-        id: Int?,
-        imdbId: String?,
-        originalLanguage: String?,
-        originalTitle: String?,
-        overview: String?,
-        popularity: Float?,
-        posterPath: String?,
-        productionCompanies: [ProductionCompany]?,
-        productionCountries: [ProductionCountry]?,
-        releaseDate: String?,
-        revenue: Int?,
-        runtime: Int?,
-        spokenLanguages: [SpokenLanguage]?,
-        status: String?,
-        tagline: String?,
-        title: String?,
-        video: Bool?,
-        voteAverage: Float?,
-        voteCount: Int?
+        budget: Int = -1,
+        genres: [Genre] = [],
+        homepage: String = "",
+        id: Int = -1,
+        imdbId: String = "",
+        originalLanguage: String = "",
+        originalTitle: String = "",
+        overview: String = "",
+        popularity: Float = 0,
+        posterPath: String = "",
+        productionCompanies: [ProductionCompany] = [],
+        productionCountries: [ProductionCountry] = [],
+        releaseDate: String = "",
+        revenue: Int = -1,
+        runtime: Int = -1,
+        spokenLanguages: [SpokenLanguage] = [],
+        status: String = "",
+        tagline: String = "",
+        title: String = "",
+        video: Bool = false,
+        voteAverage: Float = 0,
+        voteCount: Int = -1
     ) {
         self.adult = adult
         self.backdropPath = backdropPath
@@ -114,5 +114,16 @@ class MovieDetailsResponse: Codable {
         self.video = video
         self.voteAverage = voteAverage
         self.voteCount = voteCount
+    }
+}
+
+extension MovieDetailsResponse {
+    func toDomain() -> MovieDetailsDomain {
+        return MovieDetailsDomain(
+            id: self.id,
+            overview: self.overview,
+            title: self.title,
+            imageUrl: !posterPath.isEmpty ? BuildConfiguration.shared.IMAGE_URL_BASE_PATH + posterPath : ""
+        )
     }
 }
