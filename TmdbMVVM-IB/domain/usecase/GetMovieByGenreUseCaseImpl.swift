@@ -17,6 +17,6 @@ struct GetMovieByGenreUseCaseImpl: GetMovieByGenreUseCase {
     }
 
     func call(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreDomain> {
-        return appRepository.fetchMovieByGenre(genreId: genreId, page: 1)
+        return appRepository.fetchMovieByGenre(genreId: genreId, page: page)
     }
 }
