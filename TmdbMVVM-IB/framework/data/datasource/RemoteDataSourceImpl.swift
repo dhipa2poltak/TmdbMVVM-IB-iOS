@@ -10,49 +10,29 @@ import RxSwift
 
 class RemoteDataSourceImpl: AppDataSource {
 
-    let apiClient: ApiClient?
+    let apiClient: ApiClient
 
-    init(apiClient: ApiClient?) {
+    init(apiClient: ApiClient) {
         self.apiClient = apiClient
     }
 
     func fetchMovieGenre() -> Observable<GenreResponse> {
-        if let apiClient = apiClient {
-            return apiClient.fetchMovieGenre()
-        }
-
-        return Observable.empty()
+        return apiClient.fetchMovieGenre()
     }
 
     func fetchMovieByGenre(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreResponse> {
-        if let apiClient = apiClient {
-            return apiClient.fetchMovieByGenre(genreId: genreId, page: page)
-        }
-
-        return Observable.empty()
+        return apiClient.fetchMovieByGenre(genreId: genreId, page: page)
     }
 
     func fetchMovieDetail(movieId: Int) -> Observable<MovieDetailsResponse> {
-        if let apiClient = apiClient {
-            return apiClient.fetchMovieDetail(movieId: movieId)
-        }
-
-        return Observable.empty()
+        return apiClient.fetchMovieDetail(movieId: movieId)
     }
 
     func fetchMovieReviews(movieId: Int, page: Int) -> Observable<ReviewResponse> {
-        if let apiClient = apiClient {
-            return apiClient.fetchMovieReviews(movieId: movieId, page: page)
-        }
-
-        return Observable.empty()
+        return apiClient.fetchMovieReviews(movieId: movieId, page: page)
     }
 
     func fetchMovieTrailer(movieId: Int) -> Observable<TrailerResponse> {
-        if let apiClient = apiClient {
-            return apiClient.fetchMovieTrailer(movieId: movieId)
-        }
-
-        return Observable.empty()
+        return apiClient.fetchMovieTrailer(movieId: movieId)
     }
 }

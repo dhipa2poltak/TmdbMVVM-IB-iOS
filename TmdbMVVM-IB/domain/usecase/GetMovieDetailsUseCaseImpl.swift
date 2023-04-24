@@ -10,17 +10,13 @@ import RxSwift
 
 struct GetMovieDetailsUseCaseImpl: GetMovieDetailsUseCase {
 
-    let appRepository: AppRepository?
+    let appRepository: AppRepository
 
-    init(appRepository: AppRepository?) {
+    init(appRepository: AppRepository) {
         self.appRepository = appRepository
     }
 
     func call(movieId: Int) -> Observable<MovieDetailsDomain> {
-        if let appRepository = appRepository {
-            return appRepository.fetchMovieDetail(movieId: movieId)
-        }
-
-        return Observable.empty()
+        return appRepository.fetchMovieDetail(movieId: movieId)
     }
 }

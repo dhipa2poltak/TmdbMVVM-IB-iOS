@@ -28,32 +28,46 @@ class AppCoordinator: Coordinator {
             ApiClient()
         }.inObjectScope(.container)
 
-        self.container.register(AppDataSource.self) { resolver in
-            RemoteDataSourceImpl(apiClient: resolver.resolve(ApiClient.self))
-        }.inObjectScope(.container)
-
-        self.container.register(AppRepository.self) { resolver in
-            AppRepositoryImpl(appDataSource: resolver.resolve(AppDataSource.self))
-        }.inObjectScope(.container)
-
-        self.container.register(GetMovieGenreUseCase.self) { resolver in
-            GetMovieGenreUseCaseImpl(appRepository: resolver.resolve(AppRepository.self))
+        if let apiClient = container.resolve(ApiClient.self) {
+            self.container.register(AppDataSource.self) { _ in
+                return RemoteDataSourceImpl(apiClient: apiClient)
+            }.inObjectScope(.container)
         }
 
-        self.container.register(GetMovieByGenreUseCase.self) { resolver in
-            GetMovieByGenreUseCaseImpl(appRepository: resolver.resolve(AppRepository.self))
+        if let appDataSource = container.resolve(AppDataSource.self) {
+            self.container.register(AppRepository.self) { _ in
+                return AppRepositoryImpl(appDataSource: appDataSource)
+            }.inObjectScope(.container)
         }
 
-        self.container.register(GetMovieDetailsUseCase.self) { resolver in
-            GetMovieDetailsUseCaseImpl(appRepository: resolver.resolve(AppRepository.self))
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieGenreUseCase.self) { _ in
+                return GetMovieGenreUseCaseImpl(appRepository: appRepository)
+            }
         }
 
-        self.container.register(GetMovieReviewUseCase.self) { resolver in
-            GetMovieReviewUseCaseImpl(appRepository: resolver.resolve(AppRepository.self))
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieByGenreUseCase.self) { _ in
+                return GetMovieByGenreUseCaseImpl(appRepository: appRepository)
+            }
         }
 
-        self.container.register(GetMovieTrailerUseCase.self) { resolver in
-            GetMovieTrailerUseCaseImpl(appRepository: resolver.resolve(AppRepository.self))
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieDetailsUseCase.self) { _ in
+                return GetMovieDetailsUseCaseImpl(appRepository: appRepository)
+            }
+        }
+
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieReviewUseCase.self) { _ in
+                return GetMovieReviewUseCaseImpl(appRepository: appRepository)
+            }
+        }
+
+        if let appRepository = container.resolve(AppRepository.self) {
+            self.container.register(GetMovieTrailerUseCase.self) { _ in
+                return GetMovieTrailerUseCaseImpl(appRepository: appRepository)
+            }
         }
 
         self.container.register(GenreVM.self) { resolver in

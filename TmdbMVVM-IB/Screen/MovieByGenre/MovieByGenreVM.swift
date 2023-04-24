@@ -25,6 +25,11 @@ class MovieByGenreVM: BaseVM {
     }
 
     func fetchMovieGenre(genreId: String, page: Int) {
+        if getMovieByGenreUseCase == nil {
+            errorMessage.value = "error dependency"
+            return
+        }
+
         isShowDialogLoading.value = true
 
         getMovieByGenreUseCase?.call(genreId: genreId, page: page)

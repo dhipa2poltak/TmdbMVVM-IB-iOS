@@ -25,6 +25,11 @@ class MovieReviewVM: BaseVM {
     }
 
     func fetchMovieReviews(movieId: Int, page: Int) {
+        if getMovieReviewUseCase == nil {
+            errorMessage.value = "error dependency"
+            return
+        }
+
         isShowDialogLoading.value = true
 
         getMovieReviewUseCase?.call(movieId: movieId, page: page)

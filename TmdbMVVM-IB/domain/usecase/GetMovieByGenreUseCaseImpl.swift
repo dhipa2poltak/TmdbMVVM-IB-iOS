@@ -10,17 +10,13 @@ import RxSwift
 
 struct GetMovieByGenreUseCaseImpl: GetMovieByGenreUseCase {
 
-    let appRepository: AppRepository?
+    let appRepository: AppRepository
 
-    init(appRepository: AppRepository?) {
+    init(appRepository: AppRepository) {
         self.appRepository = appRepository
     }
 
     func call(genreId: String, page: Int) -> Observable<DiscoverMovieByGenreDomain> {
-        if let appRepository = appRepository {
-            return appRepository.fetchMovieByGenre(genreId: genreId, page: 1)
-        }
-
-        return Observable.empty()
+        return appRepository.fetchMovieByGenre(genreId: genreId, page: 1)
     }
 }

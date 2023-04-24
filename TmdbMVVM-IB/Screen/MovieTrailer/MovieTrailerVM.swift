@@ -21,6 +21,11 @@ class MovieTrailerVM: BaseVM {
     }
 
     func fetchMovieTrailer(movieId: Int) {
+        if getMovieTrailerUseCase == nil {
+            errorMessage.value = "error dependency"
+            return
+        }
+
         isShowDialogLoading.value = true
 
         getMovieTrailerUseCase?.call(movieId: movieId)
