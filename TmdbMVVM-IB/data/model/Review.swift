@@ -8,13 +8,13 @@
 import Foundation
 
 struct Review: Codable {
-    let author: String
+    let author: String?
     let authorDetails: AuthorDetails?
-    let content: String
-    let createdAt: String//Date?
-    let id: String
-    let updatedAt: String//Date?
-    let url: String
+    let content: String?
+    let createdAt: String?//Date?
+    let id: String?
+    let updatedAt: String?//Date?
+    let url: String?
 
     enum CodingKeys: String, CodingKey {
         case author
@@ -27,13 +27,13 @@ struct Review: Codable {
     }
 
     init(
-        author: String = "",
-        authorDetails: AuthorDetails? = nil,
-        content: String = "",
-        createdAt: String = ""/*Date?*/,
-        id: String = "",
-        updatedAt: String = ""/*Date?*/,
-        url: String = ""
+        author: String?,
+        authorDetails: AuthorDetails?,
+        content: String?,
+        createdAt: String?/*Date?*/,
+        id: String?,
+        updatedAt: String?/*Date?*/,
+        url: String?
     ) {
         self.author = author
         self.authorDetails = authorDetails

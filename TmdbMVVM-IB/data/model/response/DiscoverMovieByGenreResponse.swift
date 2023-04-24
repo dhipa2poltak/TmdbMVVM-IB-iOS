@@ -8,10 +8,10 @@
 import Foundation
 
 struct DiscoverMovieByGenreResponse: Codable {
-    let page: Int
-    let results: [Movie]
-    let totalPages: Int
-    let totalResults: Int
+    let page: Int?
+    let results: [Movie]?
+    let totalPages: Int?
+    let totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
         case page
@@ -21,10 +21,10 @@ struct DiscoverMovieByGenreResponse: Codable {
     }
 
     init(
-        page: Int = -1,
-        results: [Movie] = [],
-        totalPages: Int = -1,
-        totalResults: Int = -1
+        page: Int?,
+        results: [Movie]?,
+        totalPages: Int?,
+        totalResults: Int?
     ) {
         self.page = page
         self.results = results
@@ -35,20 +35,20 @@ struct DiscoverMovieByGenreResponse: Codable {
 
 extension DiscoverMovieByGenreResponse {
     func toDomain() -> DiscoverMovieByGenreDomain {
-        let movieEntities = results.map { (movie) -> MovieEntity in
+        let movieEntities = results?.map { (movie) -> MovieEntity in
             return MovieEntity(
-                id: movie.id,
-                title: movie.title,
-                overview: movie.overview,
-                imageUrl: !movie.posterPath.isEmpty ? BuildConfiguration.shared.IMAGE_URL_BASE_PATH + movie.posterPath : ""
+                id: movie.id ?? -1,
+                title: movie.title ?? "",
+                overview: movie.overview ?? "",
+                imageUrl: (!(movie.posterPath?.isEmpty ?? true)) ? BuildConfiguration.shared.IMAGE_URL_BASE_PATH + (movie.posterPath ?? "") : ""
             )
         }
 
         return DiscoverMovieByGenreDomain(
-            page: self.page,
-            results: movieEntities,
-            totalPages: self.totalPages,
-            totalResults: self.totalResults
+            page: self.page ?? -1,
+            results: movieEntities ?? [],
+            totalPages: self.totalPages ?? -1,
+            totalResults: self.totalResults ?? -1
         )
     }
 }

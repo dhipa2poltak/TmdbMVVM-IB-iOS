@@ -8,15 +8,15 @@
 import Foundation
 
 struct TrailerResponse: Codable {
-    let id: Int
-    let results: [Trailer]
+    let id: Int?
+    let results: [Trailer]?
 
     enum CodingKeys: String, CodingKey {
         case id
         case results
     }
 
-    init(id: Int = -1, results: [Trailer] = []) {
+    init(id: Int?, results: [Trailer]?) {
         self.id = id
         self.results = results
     }
@@ -24,10 +24,15 @@ struct TrailerResponse: Codable {
 
 extension TrailerResponse {
     func toDomain() -> TrailerDomain {
-        let trailerEntities = results.map { (trailer) -> TrailerEntity in
-            return TrailerEntity(id: trailer.id, key: trailer.key, name: trailer.name, site: trailer.site)
+        let trailerEntities = results?.map { (trailer) -> TrailerEntity in
+            return TrailerEntity(
+                id: trailer.id ?? "",
+                key: trailer.key ?? "",
+                name: trailer.name ?? "",
+                site: trailer.site ?? ""
+            )
         }
 
-        return TrailerDomain(id: self.id, results: trailerEntities)
+        return TrailerDomain(id: self.id ?? -1, results: trailerEntities ?? [])
     }
 }

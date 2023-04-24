@@ -21,10 +21,10 @@ struct AuthorDetails: Codable {
     }
 
     init(
-        name: String? = "",
-        username: String? = "",
-        avatarPath: String? = "",
-        rating: Float? = 0
+        name: String?,
+        username: String?,
+        avatarPath: String?,
+        rating: Float?
     ) {
         self.name = name
         self.username = username

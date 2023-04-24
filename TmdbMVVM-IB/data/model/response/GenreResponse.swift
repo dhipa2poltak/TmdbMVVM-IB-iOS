@@ -8,23 +8,23 @@
 import Foundation
 
 struct GenreResponse: Codable {
-    let genres: [Genre]
+    let genres: [Genre]?
 
     enum CodingKeys: String, CodingKey {
         case genres
     }
 
-    init(genres: [Genre] = []) {
+    init(genres: [Genre]?) {
         self.genres = genres
     }
 }
 
 extension GenreResponse {
     func toDomain() -> GenreDomain {
-        let genreEntities = genres.map { (genre) -> GenreEntity in
-            return GenreEntity(id: genre.id, name: genre.name)
+        let genreEntities = genres?.map { (genre) -> GenreEntity in
+            return GenreEntity(id: genre.id ?? -1, name: genre.name ?? "")
         }
 
-        return GenreDomain(genres: genreEntities)
+        return GenreDomain(genres: genreEntities ?? [])
     }
 }

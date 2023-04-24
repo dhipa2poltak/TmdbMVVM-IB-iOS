@@ -8,20 +8,20 @@
 import Foundation
 
 struct Movie: Codable {
-    let adult: Bool
-    let backdropPath: String
-    let genreIds: [Int]
-    let id: Int
-    let originalLanguage: String
-    let originalTitle: String
-    let overview: String
-    let popularity: Float
-    let posterPath: String
-    let releaseDate: String
-    let title: String
-    let video: Bool
-    let voteAverage: Float
-    let voteCount: Int
+    let adult: Bool?
+    let backdropPath: String?
+    let genreIds: [Int]?
+    let id: Int?
+    let originalLanguage: String?
+    let originalTitle: String?
+    let overview: String?
+    let popularity: Float?
+    let posterPath: String?
+    let releaseDate: String?
+    let title: String?
+    let video: Bool?
+    let voteAverage: Float?
+    let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case adult
@@ -41,20 +41,20 @@ struct Movie: Codable {
     }
 
     init(
-        adult: Bool = false,
-        backdropPath: String = "",
-        genreIds: [Int] = [],
-        id: Int = -1,
-        originalLanguage: String = "",
-        originalTitle: String = "",
-        overview: String = "",
-        popularity: Float = 0,
-        posterPath: String = "",
-        releaseDate: String = "",
-        title: String = "",
-        video: Bool = false,
-        voteAverage: Float = 0,
-        voteCount: Int = -1
+        adult: Bool?,
+        backdropPath: String?,
+        genreIds: [Int]?,
+        id: Int?,
+        originalLanguage: String?,
+        originalTitle: String?,
+        overview: String?,
+        popularity: Float?,
+        posterPath: String?,
+        releaseDate: String?,
+        title: String?,
+        video: Bool?,
+        voteAverage: Float?,
+        voteCount: Int?
     ) {
         self.adult = adult
         self.backdropPath = backdropPath

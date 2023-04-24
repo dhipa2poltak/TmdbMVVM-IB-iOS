@@ -8,11 +8,11 @@
 import Foundation
 
 struct ReviewResponse: Codable {
-    let id: Int
-    let page: Int
-    let results: [Review]
-    let totalPages: Int
-    let totalResults: Int
+    let id: Int?
+    let page: Int?
+    let results: [Review]?
+    let totalPages: Int?
+    let totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -23,11 +23,11 @@ struct ReviewResponse: Codable {
     }
 
     init(
-        id: Int = -1,
-        page: Int = -1,
-        results: [Review] = [],
-        totalPages: Int = -1,
-        totalResults: Int = -1
+        id: Int?,
+        page: Int?,
+        results: [Review]?,
+        totalPages: Int?,
+        totalResults: Int?
     ) {
         self.id = id
         self.page = page
@@ -39,7 +39,7 @@ struct ReviewResponse: Codable {
 
 extension ReviewResponse {
     func toDomain() -> ReviewDomain {
-        let reviewEntities = results.map { (review) -> ReviewEntity in
+        let reviewEntities = results?.map { (review) -> ReviewEntity in
             var imageUrl = review.authorDetails?.avatarPath ?? ""
             if imageUrl.starts(with: "/") {
                 imageUrl.remove(at: imageUrl.startIndex)
@@ -50,11 +50,15 @@ extension ReviewResponse {
             }
 
             let authorDetailsEntity = AuthorDetailsEntity(avatarPath: imageUrl)
-            let reviewEntity = ReviewEntity(author: review.author, authorDetails: authorDetailsEntity, content: review.content)
+            let reviewEntity = ReviewEntity(
+                author: review.author ?? "",
+                authorDetails: authorDetailsEntity,
+                content: review.content ?? ""
+            )
 
             return reviewEntity
         }
 
-        return ReviewDomain(results: reviewEntities)
+        return ReviewDomain(results: reviewEntities ?? [])
     }
 }
