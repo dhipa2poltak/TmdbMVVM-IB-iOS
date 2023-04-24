@@ -9,11 +9,9 @@ import Foundation
 import SVProgressHUD
 import YouTubePlayer
 
-class MovieTrailerVC: BaseVC, Storyboarded, YouTubePlayerDelegate {
+class MovieTrailerVC: BaseVC<MovieTrailerVM>, Storyboarded, YouTubePlayerDelegate {
 
     @IBOutlet weak var youtubePlayer: YouTubePlayerView!
-
-    var viewModel: MovieTrailerVM?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +28,14 @@ class MovieTrailerVC: BaseVC, Storyboarded, YouTubePlayerDelegate {
         }
     }
 
-    private func setupObserver() {
+    override func setupObserver() {
+        super.setupObserver()
+
         viewModel?.isShowDialogLoading.bind { isShowDialogLoading in
             if isShowDialogLoading {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
-            }
-        }
-
-        viewModel?.toastMessage.bind { [weak self] toastMessage in
-            if !toastMessage.isEmpty {
-                self?.showToast(message: toastMessage, font: .systemFont(ofSize: 12.0))
-                self?.viewModel?.toastMessage.value = ""
             }
         }
 

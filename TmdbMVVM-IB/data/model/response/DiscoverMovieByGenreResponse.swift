@@ -40,7 +40,7 @@ extension DiscoverMovieByGenreResponse {
                 id: movie.id,
                 title: movie.title,
                 overview: movie.overview,
-                imageUrl: ""
+                imageUrl: !movie.posterPath.isEmpty ? BuildConfiguration.shared.IMAGE_URL_BASE_PATH + movie.posterPath : ""
             )
         }
 

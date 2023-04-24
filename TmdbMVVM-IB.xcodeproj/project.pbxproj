@@ -32,6 +32,10 @@
 		CE3C09B729F55247001CCE66 /* AppRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C09B629F55247001CCE66 /* AppRepositoryImpl.swift */; };
 		CE3C09BC29F55F0C001CCE66 /* AppDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C09BB29F55F0C001CCE66 /* AppDataSource.swift */; };
 		CE3C09C529F55FBC001CCE66 /* RemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C09C429F55FBC001CCE66 /* RemoteDataSourceImpl.swift */; };
+		CE3C09FE29F584EB001CCE66 /* MovieTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C09FC29F584EB001CCE66 /* MovieTVC.swift */; };
+		CE3C09FF29F584EB001CCE66 /* MovieTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3C09FD29F584EB001CCE66 /* MovieTVC.xib */; };
+		CE3C0A0929F65C9B001CCE66 /* GenreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C0A0729F65C9B001CCE66 /* GenreTVC.swift */; };
+		CE3C0A0A29F65C9B001CCE66 /* GenreTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3C0A0829F65C9B001CCE66 /* GenreTVC.xib */; };
 		CE84450E29AF096C00231703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84450D29AF096C00231703 /* AppDelegate.swift */; };
 		CE84451529AF096D00231703 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE84451329AF096D00231703 /* Main.storyboard */; };
 		CE84451729AF097A00231703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE84451629AF097A00231703 /* Assets.xcassets */; };
@@ -139,6 +143,10 @@
 		CE3C09B629F55247001CCE66 /* AppRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryImpl.swift; sourceTree = "<group>"; };
 		CE3C09BB29F55F0C001CCE66 /* AppDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataSource.swift; sourceTree = "<group>"; };
 		CE3C09C429F55FBC001CCE66 /* RemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceImpl.swift; sourceTree = "<group>"; };
+		CE3C09FC29F584EB001CCE66 /* MovieTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTVC.swift; sourceTree = "<group>"; };
+		CE3C09FD29F584EB001CCE66 /* MovieTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTVC.xib; sourceTree = "<group>"; };
+		CE3C0A0729F65C9B001CCE66 /* GenreTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTVC.swift; sourceTree = "<group>"; };
+		CE3C0A0829F65C9B001CCE66 /* GenreTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreTVC.xib; sourceTree = "<group>"; };
 		CE84450A29AF096C00231703 /* TmdbMVVM-IB Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-IB Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE84450D29AF096C00231703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE84451429AF096D00231703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -232,9 +240,9 @@
 		CE3C093329F511E8001CCE66 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				CE3C096D29F51AC2001CCE66 /* usecase */,
-				CE3C096729F519A2001CCE66 /* repository */,
 				CE3C093429F51202001CCE66 /* entity */,
+				CE3C096729F519A2001CCE66 /* repository */,
+				CE3C096D29F51AC2001CCE66 /* usecase */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -285,8 +293,8 @@
 			isa = PBXGroup;
 			children = (
 				CE3C09B229F52359001CCE66 /* datasource */,
-				CE3C09B129F5234C001CCE66 /* repository */,
 				CE8445EB29AF309600231703 /* model */,
+				CE3C09B129F5234C001CCE66 /* repository */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -323,11 +331,10 @@
 			isa = PBXGroup;
 			children = (
 				CE3C09C129F55F78001CCE66 /* data */,
-				CE84454329AF0A6500231703 /* App */,
-				CE84457C29AF0F7500231703 /* Configs */,
 				CE8445A929AF12C100231703 /* BaseClass */,
-				CE8445B229AF132900231703 /* Extension */,
 				CE8445A029AF11C500231703 /* BindingUtil */,
+				CE84457C29AF0F7500231703 /* Configs */,
+				CE8445B229AF132900231703 /* Extension */,
 			);
 			path = framework;
 			sourceTree = "<group>";
@@ -335,8 +342,8 @@
 		CE3C09C129F55F78001CCE66 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				CE3C09C329F55FAA001CCE66 /* datasource */,
 				CE3C09C229F55FA4001CCE66 /* core */,
+				CE3C09C329F55FAA001CCE66 /* datasource */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -374,6 +381,24 @@
 			path = rest;
 			sourceTree = "<group>";
 		};
+		CE3C09FB29F584C8001CCE66 /* MovieTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE3C09FC29F584EB001CCE66 /* MovieTVC.swift */,
+				CE3C09FD29F584EB001CCE66 /* MovieTVC.xib */,
+			);
+			path = MovieTVC;
+			sourceTree = "<group>";
+		};
+		CE3C0A0629F65C81001CCE66 /* GenreTVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE3C0A0729F65C9B001CCE66 /* GenreTVC.swift */,
+				CE3C0A0829F65C9B001CCE66 /* GenreTVC.xib */,
+			);
+			path = GenreTVC;
+			sourceTree = "<group>";
+		};
 		CE84450129AF096C00231703 = {
 			isa = PBXGroup;
 			children = (
@@ -399,9 +424,10 @@
 		CE84450C29AF096C00231703 /* TmdbMVVM-IB */ = {
 			isa = PBXGroup;
 			children = (
-				CE3C09C029F55F6E001CCE66 /* framework */,
+				CE84454329AF0A6500231703 /* App */,
 				CE3C09A029F522F3001CCE66 /* data */,
 				CE3C093329F511E8001CCE66 /* domain */,
+				CE3C09C029F55F6E001CCE66 /* framework */,
 				CE84455929AF0BCA00231703 /* Screen */,
 				CE84463029AF397E00231703 /* UIComponent */,
 			);
@@ -515,6 +541,8 @@
 		CE84463029AF397E00231703 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				CE3C0A0629F65C81001CCE66 /* GenreTVC */,
+				CE3C09FB29F584C8001CCE66 /* MovieTVC */,
 				CE84468329AF7A2500231703 /* ReviewTVC */,
 			);
 			path = UIComponent;
@@ -701,7 +729,9 @@
 				CE84468729AF7A5100231703 /* ReviewTVC.xib in Resources */,
 				CE84451A29AF097A00231703 /* LaunchScreen.storyboard in Resources */,
 				CE84451729AF097A00231703 /* Assets.xcassets in Resources */,
+				CE3C09FF29F584EB001CCE66 /* MovieTVC.xib in Resources */,
 				CE84451529AF096D00231703 /* Main.storyboard in Resources */,
+				CE3C0A0A29F65C9B001CCE66 /* GenreTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -834,6 +864,7 @@
 				CE3C096329F5187C001CCE66 /* TrailerEntity.swift in Sources */,
 				CE3C094529F51470001CCE66 /* GenreEntity.swift in Sources */,
 				CE84465029AF4B0400231703 /* MovieByGenreVM.swift in Sources */,
+				CE3C09FE29F584EB001CCE66 /* MovieTVC.swift in Sources */,
 				CE8445E229AF303100231703 /* BaseVM.swift in Sources */,
 				CE8445E729AF305C00231703 /* GenreVM.swift in Sources */,
 				CE8447A429B0D6F300231703 /* ApiClient.swift in Sources */,
@@ -861,6 +892,7 @@
 				CE84454829AF0A9400231703 /* Coordinator.swift in Sources */,
 				CE3C093B29F512A3001CCE66 /* DiscoverMovieByGenreDomain.swift in Sources */,
 				CE84455029AF0ADA00231703 /* AppCoordinator.swift in Sources */,
+				CE3C0A0929F65C9B001CCE66 /* GenreTVC.swift in Sources */,
 				CE8445B429AF134100231703 /* UIColor+Ext.swift in Sources */,
 				CE84450E29AF096C00231703 /* AppDelegate.swift in Sources */,
 				CE84455529AF0B2500231703 /* Storyboarded.swift in Sources */,
@@ -1067,7 +1099,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/framework/App/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1087,7 +1119,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/framework/App/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1256,7 +1288,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/framework/App/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1381,7 +1413,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/framework/App/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1500,7 +1532,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/framework/App/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1619,7 +1651,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q63MQDT7DY;
-				INFOPLIST_FILE = "TmdbMVVM-IB/framework/App/Info.plist";
+				INFOPLIST_FILE = "TmdbMVVM-IB/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

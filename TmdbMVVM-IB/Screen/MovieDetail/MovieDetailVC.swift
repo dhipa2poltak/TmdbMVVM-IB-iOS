@@ -10,13 +10,12 @@ import Kingfisher
 import SVProgressHUD
 import UIKit
 
-class MovieDetailVC: BaseVC, Storyboarded {
+class MovieDetailVC: BaseVC<MovieDetailVM>, Storyboarded {
 
     @IBOutlet weak var lblTitleMovie: UILabel!
     @IBOutlet weak var ivMovie: UIImageView!
     @IBOutlet weak var lblDesc: UILabel!
 
-    var viewModel: MovieDetailVM?
     weak var coordinator: AppCoordinator?
 
     override func viewDidLoad() {
@@ -32,19 +31,14 @@ class MovieDetailVC: BaseVC, Storyboarded {
     }
 
 
-    private func setupObserver() {
+    override func setupObserver() {
+        super.setupObserver()
+
         viewModel?.isShowDialogLoading.bind { isShowDialogLoading in
             if isShowDialogLoading {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
-            }
-        }
-
-        viewModel?.toastMessage.bind { [weak self] toastMessage in
-            if !toastMessage.isEmpty {
-                self?.showToast(message: toastMessage, font: .systemFont(ofSize: 12.0))
-                self?.viewModel?.toastMessage.value = ""
             }
         }
 

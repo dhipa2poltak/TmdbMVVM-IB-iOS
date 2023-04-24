@@ -45,7 +45,7 @@ class MovieReviewVM: BaseVM {
             }, onError: { [weak self] error in
                 self?.isShowDialogLoading.value = false
 
-                self?.toastMessage.value = "error: \(error.localizedDescription)"
+                self?.errorMessage.value = "error: \(error.localizedDescription)"
             }).disposed(by: disposeBag)
     }
 }

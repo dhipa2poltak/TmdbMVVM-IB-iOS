@@ -9,16 +9,15 @@ import Foundation
 import SVProgressHUD
 import UIKit
 
-class MovieByGenreVC: BaseVC, Storyboarded {
+class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tableVw: UITableView!
 
-    var viewModel: MovieByGenreVM?
     weak var coordinator: AppCoordinator?
 
-    private let nbName = "SingleRowTVC"
-    private let cellId = "SingleRowTVC"
+    private let nbName = "MovieTVC"
+    private let cellId = "MovieTVC"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,24 +33,21 @@ class MovieByGenreVC: BaseVC, Storyboarded {
         tableVw.dataSource = self
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .none
-        tableVw.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+
+        let nibTVC = UINib(nibName: nbName, bundle: nil)
+        tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
         
         tableVw.reloadData()
     }
 
-    private func setupObserver() {
+    override func setupObserver() {
+        super.setupObserver()
+
         viewModel?.isShowDialogLoading.bind { [weak self] isShowDialogLoading in
             if isShowDialogLoading && self?.viewModel?.movies.isEmpty ?? true {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
-            }
-        }
-
-        viewModel?.toastMessage.bind { [weak self] toastMessage in
-            if !toastMessage.isEmpty {
-                self?.showToast(message: toastMessage, font: .systemFont(ofSize: 12.0))
-                self?.viewModel?.toastMessage.value = ""
             }
         }
 
@@ -88,12 +84,11 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.accessoryType = .disclosureIndicator
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTVC
         cell.selectionStyle = .none
 
         let movie = viewModel?.movies[indexPath.row]
-        cell.textLabel?.text = movie?.title ?? ""
+        cell.bindData(imageUrl: movie?.imageUrl, title: movie?.title, overview: movie?.overview)
 
         return cell
     }

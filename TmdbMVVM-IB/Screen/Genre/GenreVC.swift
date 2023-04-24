@@ -8,15 +8,14 @@
 import SVProgressHUD
 import UIKit
 
-class GenreVC: BaseVC, Storyboarded {
+class GenreVC: BaseVC<GenreVM>, Storyboarded {
 
     @IBOutlet weak var tableVw: UITableView!
 
-    var viewModel: GenreVM?
     weak var coordinator: AppCoordinator?
 
-    private let nbName = "SingleRowTVC"
-    private let cellId = "SingleRowTVC"
+    private let nbName = "GenreTVC"
+    private let cellId = "GenreTVC"
 
     private lazy var refreshControl: UIRefreshControl = {
         let rc = UIRefreshControl()
@@ -45,22 +44,19 @@ class GenreVC: BaseVC, Storyboarded {
         tableVw.delegate = self
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .none
-        tableVw.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+
+        let nibTVC = UINib(nibName: nbName, bundle: nil)
+        tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
     }
 
-    private func setupObserver() {
+    override func setupObserver() {
+        super.setupObserver()
+        
         viewModel?.isShowDialogLoading.bind { isShowDialogLoading in
             if isShowDialogLoading {
                 SVProgressHUD.show()
             } else {
                 SVProgressHUD.dismiss()
-            }
-        }
-
-        viewModel?.toastMessage.bind { [weak self] toastMessage in
-            if !toastMessage.isEmpty {
-                self?.showToast(message: toastMessage, font: .systemFont(ofSize: 12.0))
-                self?.viewModel?.toastMessage.value = ""
             }
         }
 
@@ -90,12 +86,11 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.accessoryType = .disclosureIndicator
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GenreTVC
         cell.selectionStyle = .none
 
         if let genre = viewModel?.genres?[indexPath.row] {
-            cell.textLabel?.text = genre.name
+            cell.lblGenre.text = genre.name
         }
 
         return cell
