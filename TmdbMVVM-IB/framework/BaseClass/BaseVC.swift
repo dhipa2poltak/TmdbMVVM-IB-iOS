@@ -28,7 +28,7 @@ class BaseVC<T: BaseVM>: UIViewController {
         }
     }
 
-    func setupNavBar(title: String = "TmdbMVVM-IB") {
+    func setupNavBar(title: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String ?? "TmdbMVVM-IB") {
         guard let navController = navigationController else { return }
 
         navController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black,

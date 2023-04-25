@@ -147,7 +147,7 @@
 		CE3C09FD29F584EB001CCE66 /* MovieTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTVC.xib; sourceTree = "<group>"; };
 		CE3C0A0729F65C9B001CCE66 /* GenreTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTVC.swift; sourceTree = "<group>"; };
 		CE3C0A0829F65C9B001CCE66 /* GenreTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreTVC.xib; sourceTree = "<group>"; };
-		CE84450A29AF096C00231703 /* TmdbMVVM-IB Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-IB Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE84450A29AF096C00231703 /* TmdbMVVM-IB (Staging-Debug).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TmdbMVVM-IB (Staging-Debug).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE84450D29AF096C00231703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE84451429AF096D00231703 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE84451629AF097A00231703 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -414,7 +414,7 @@
 		CE84450B29AF096C00231703 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE84450A29AF096C00231703 /* TmdbMVVM-IB Staging.app */,
+				CE84450A29AF096C00231703 /* TmdbMVVM-IB (Staging-Debug).app */,
 				CE84452029AF097B00231703 /* TmdbMVVM-IBTests.xctest */,
 				CE84452B29AF097B00231703 /* TmdbMVVM-IBUITests.xctest */,
 			);
@@ -637,7 +637,7 @@
 			);
 			name = "TmdbMVVM-IB";
 			productName = "TmdbMVVM-IB";
-			productReference = CE84450A29AF096C00231703 /* TmdbMVVM-IB Staging.app */;
+			productReference = CE84450A29AF096C00231703 /* TmdbMVVM-IB (Staging-Debug).app */;
 			productType = "com.apple.product-type.application";
 		};
 		CE84451F29AF097B00231703 /* TmdbMVVM-IBTests */ = {
@@ -1104,8 +1104,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging";
-				PRODUCT_NAME = "$(TARGET_NAME) Staging";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging.debug";
+				PRODUCT_NAME = "$(TARGET_NAME) (Staging-Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1125,7 +1125,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.staging";
-				PRODUCT_NAME = "$(TARGET_NAME) Staging";
+				PRODUCT_NAME = "$(TARGET_NAME) (Staging)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1293,8 +1293,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.debug";
+				PRODUCT_NAME = "$(TARGET_NAME) (Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1418,8 +1418,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify";
-				PRODUCT_NAME = "$(TARGET_NAME) Verify";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify.debug";
+				PRODUCT_NAME = "$(TARGET_NAME) (Verify-Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1538,7 +1538,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dpfht.TmdbMVVM-IB.verify";
-				PRODUCT_NAME = "$(TARGET_NAME) Verify";
+				PRODUCT_NAME = "$(TARGET_NAME) (Verify)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
