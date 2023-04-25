@@ -90,7 +90,7 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
 
         if let genre = viewModel?.genres?[indexPath.row] {
-            cell.lblGenre.text = genre.name
+            cell.bindData(genreName: genre.name)
         }
 
         return cell

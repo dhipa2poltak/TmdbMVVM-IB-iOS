@@ -25,7 +25,7 @@ class MovieReviewVM: BaseVM {
     }
 
     func fetchMovieReviews(movieId: Int, page: Int) {
-        if getMovieReviewUseCase == nil {
+        guard getMovieReviewUseCase != nil else {
             errorMessage.value = "error dependency"
             return
         }

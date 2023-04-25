@@ -25,7 +25,7 @@ class MovieDetailVM: BaseVM {
     }
 
     func fetchMovieDetail(movieId: Int) {
-        if getMovieDetailsUseCase == nil {
+        guard getMovieDetailsUseCase != nil else {
             errorMessage.value = "error dependency"
             return
         }

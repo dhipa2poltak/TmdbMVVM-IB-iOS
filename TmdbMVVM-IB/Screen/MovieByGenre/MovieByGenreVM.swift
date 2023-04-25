@@ -25,7 +25,7 @@ class MovieByGenreVM: BaseVM {
     }
 
     func fetchMovieGenre(genreId: String, page: Int) {
-        if getMovieByGenreUseCase == nil {
+        guard getMovieByGenreUseCase != nil else {
             errorMessage.value = "error dependency"
             return
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TrailerEntity {
+struct TrailerEntity {
     let id: String
     let key: String
     let name: String
