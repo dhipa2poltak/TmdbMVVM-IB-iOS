@@ -36,6 +36,7 @@ class ApiClient {
         return Observable<T>.create { observer in
 
             let request = AF.request(urlConvertible)
+                .validate()
                 .responseJSON { response in
                     switch response.result {
                     case .success(let value):
@@ -50,7 +51,26 @@ class ApiClient {
                             observer.onError(error)
                         }
                     case .failure(let error):
-                        observer.onError(error)
+                        if let data = response.data {
+                            let value = String(data: data, encoding: String.Encoding.utf8)
+                            let json = JSON(value ?? "")
+
+                            var errorResponse: ErrorResponse? = nil
+
+                            do {
+                                let rawString = json.rawString(.utf8) ?? ""
+                                errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: Data(rawString.utf8))
+                            } catch {
+                            }
+
+                            if (errorResponse != nil) {
+                                observer.onError(AppError.networkError(message: errorResponse?.statusMessage ?? "error"))
+                            } else {
+                                observer.onError(error)
+                            }
+                        } else {
+                            observer.onError(error)
+                        }
                     }
                 }
 
@@ -60,3 +80,4 @@ class ApiClient {
         }
     }
 }
+
