@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE84450929AF096C00231703"
-               BuildableName = "TmdbMVVM-IB Staging.app"
+               BuildableName = "TmdbMVVM-IB (Staging).app"
                BlueprintName = "TmdbMVVM-IB"
                ReferencedContainer = "container:TmdbMVVM-IB.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE84450929AF096C00231703"
-            BuildableName = "TmdbMVVM-IB Staging.app"
+            BuildableName = "TmdbMVVM-IB (Staging).app"
             BlueprintName = "TmdbMVVM-IB"
             ReferencedContainer = "container:TmdbMVVM-IB.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE84450929AF096C00231703"
-            BuildableName = "TmdbMVVM-IB Staging.app"
+            BuildableName = "TmdbMVVM-IB (Staging).app"
             BlueprintName = "TmdbMVVM-IB"
             ReferencedContainer = "container:TmdbMVVM-IB.xcodeproj">
          </BuildableReference>
