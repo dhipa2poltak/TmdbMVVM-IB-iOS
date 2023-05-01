@@ -22,12 +22,12 @@ class MovieDetailVC: BaseVC<MovieDetailVM>, Storyboarded {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupObserver()
+
+        viewModel?.fetchMovieDetail(movieId: viewModel?.movieId ?? -1)
     }
 
     override func viewDidAppear(_: Bool) {
         super.setupNavBar()
-
-        viewModel?.fetchMovieDetail(movieId: viewModel?.movieId ?? -1)
     }
 
 

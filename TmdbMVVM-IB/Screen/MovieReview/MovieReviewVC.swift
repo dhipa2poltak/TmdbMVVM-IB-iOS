@@ -34,14 +34,14 @@ class MovieReviewVC: BaseVC<MovieReviewVM>, Storyboarded {
         tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
 
         tableVw.reloadData()
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
 
         if let viewModel = viewModel {
             viewModel.fetchMovieReviews(movieId: viewModel.movieId, page: viewModel.page)
         }
+    }
+
+    override func viewDidAppear(_: Bool) {
+        super.setupNavBar()
     }
 
     override func setupObserver() {
