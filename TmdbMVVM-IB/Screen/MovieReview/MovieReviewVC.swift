@@ -20,6 +20,7 @@ class MovieReviewVC: BaseVC<MovieReviewVM>, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupNavBar()
         // Do any additional setup after loading the view.
         lblTitleMovie.text = viewModel?.movieTitle ?? "Unknown"
 
@@ -39,10 +40,6 @@ class MovieReviewVC: BaseVC<MovieReviewVM>, Storyboarded {
         if let viewModel = viewModel {
             viewModel.fetchMovieReviews(movieId: viewModel.movieId, page: viewModel.page)
         }
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
     }
 
     override func setupObserver() {

@@ -15,6 +15,7 @@ class MovieTrailerVC: BaseVC<MovieTrailerVM>, Storyboarded, YouTubePlayerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupNavBar()
         // Do any additional setup after loading the view.
         setupObserver()
         youtubePlayer.delegate = self
@@ -22,10 +23,6 @@ class MovieTrailerVC: BaseVC<MovieTrailerVM>, Storyboarded, YouTubePlayerDelegat
         if let viewModel = viewModel {
             viewModel.fetchMovieTrailer(movieId: viewModel.movieId)
         }
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
     }
 
     override func setupObserver() {

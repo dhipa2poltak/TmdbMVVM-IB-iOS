@@ -21,6 +21,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupNavBar()
         // Do any additional setup after loading the view.
 
         if !(viewModel?.genreName.isEmpty ?? true) {
@@ -61,10 +62,6 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
                 self?.viewModel?.movieData.value = nil
             }
         }
-    }
-
-    override func viewDidAppear(_: Bool) {
-        super.setupNavBar()
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
