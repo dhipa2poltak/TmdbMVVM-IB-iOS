@@ -13,6 +13,7 @@ class MovieReviewVC: BaseVC<MovieReviewVM>, Storyboarded {
 
     @IBOutlet weak var lblTitleMovie: UILabel!
     @IBOutlet weak var tableVw: UITableView!
+    @IBOutlet weak var lblNoReview: UILabel!
 
     private let nbName = "ReviewTVC"
     private let cellId = "ReviewTVC"
@@ -62,6 +63,7 @@ class MovieReviewVC: BaseVC<MovieReviewVM>, Storyboarded {
 
                 let isEmpty = self?.viewModel?.reviews.isEmpty ?? true
                 self?.tableVw.isHidden = isEmpty
+                self?.lblNoReview.isHidden = !isEmpty
             }
         }
     }

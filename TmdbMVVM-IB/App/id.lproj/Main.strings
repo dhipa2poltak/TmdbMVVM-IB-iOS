@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Currently no review available"; ObjectID = "5QX-oZ-n6G"; */
+"5QX-oZ-n6G.text" = "Belum ada ulasan";
+
+/* Class = "UIButton"; normalTitle = "Show Trailer"; ObjectID = "HFm-5N-MlU"; */
+"HFm-5N-MlU.normalTitle" = "Lihat Cuplikan";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OPd-wT-vcR"; */
+"OPd-wT-vcR.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "puI-Zp-3U0"; */
+"puI-Zp-3U0.text" = "Label";
+
+/* Class = "UILabel"; text = "Review"; ObjectID = "qrc-qw-hVy"; */
+"qrc-qw-hVy.text" = "Ulasan";
+
+/* Class = "UILabel"; text = "Movie Genres"; ObjectID = "qvx-PQ-BoT"; */
+"qvx-PQ-BoT.text" = "Jenis Tontonan";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "t8A-N4-O7K"; */
+"t8A-N4-O7K.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Show Review"; ObjectID = "tmm-PC-qDe"; */
+"tmm-PC-qDe.normalTitle" = "Lihat Ulasan";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "z4l-Ra-eF9"; */
+"z4l-Ra-eF9.text" = "Label";

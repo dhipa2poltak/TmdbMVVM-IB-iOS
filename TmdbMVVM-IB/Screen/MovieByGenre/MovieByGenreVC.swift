@@ -24,7 +24,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
         // Do any additional setup after loading the view.
 
         if !(viewModel?.genreName.isEmpty ?? true) {
-            lblTitle.text = "Genre \(viewModel?.genreName ?? "unknown") Movies"
+            lblTitle.text = String(format: NSLocalizedString("key_title_movies_in_genre", comment: ""), viewModel?.genreName ?? "unknown")
         }
 
         setupObserver()

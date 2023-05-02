@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Genre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvx-PQ-BoT">
-                                <rect key="frame" x="148.5" y="52" width="117.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvx-PQ-BoT">
+                                <rect key="frame" x="143" y="52" width="128" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -195,7 +195,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HY6-fh-YAf">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HY6-fh-YAf">
                                 <rect key="frame" x="0.0" y="116" width="414" height="746"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -206,21 +206,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently no review available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QX-oZ-n6G">
+                                <rect key="frame" x="98" y="437.5" width="218" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gk7-qG-zuC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="puI-Zp-3U0" firstAttribute="centerX" secondItem="v2m-mC-P4W" secondAttribute="centerX" id="G3J-Kw-8bf"/>
                             <constraint firstItem="qrc-qw-hVy" firstAttribute="centerX" secondItem="v2m-mC-P4W" secondAttribute="centerX" id="Gbj-yc-Fk6"/>
+                            <constraint firstItem="5QX-oZ-n6G" firstAttribute="centerY" secondItem="v2m-mC-P4W" secondAttribute="centerY" id="Mht-II-HAC"/>
                             <constraint firstItem="HY6-fh-YAf" firstAttribute="bottom" secondItem="gk7-qG-zuC" secondAttribute="bottom" id="SF5-r7-PqF"/>
                             <constraint firstItem="qrc-qw-hVy" firstAttribute="top" secondItem="gk7-qG-zuC" secondAttribute="top" constant="8" id="Xh0-KV-eaP"/>
                             <constraint firstItem="HY6-fh-YAf" firstAttribute="leading" secondItem="gk7-qG-zuC" secondAttribute="leading" id="YyE-6X-ksR"/>
                             <constraint firstItem="HY6-fh-YAf" firstAttribute="trailing" secondItem="gk7-qG-zuC" secondAttribute="trailing" id="cs8-z3-Wm8"/>
                             <constraint firstItem="HY6-fh-YAf" firstAttribute="top" secondItem="puI-Zp-3U0" secondAttribute="bottom" constant="8" symbolic="YES" id="ncE-0Z-SIB"/>
+                            <constraint firstItem="5QX-oZ-n6G" firstAttribute="centerX" secondItem="v2m-mC-P4W" secondAttribute="centerX" id="xjg-fU-C8p"/>
                             <constraint firstItem="puI-Zp-3U0" firstAttribute="top" secondItem="qrc-qw-hVy" secondAttribute="bottom" constant="8" symbolic="YES" id="z4v-d3-Ibx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblNoReview" destination="5QX-oZ-n6G" id="jeU-cE-nlS"/>
                         <outlet property="lblTitleMovie" destination="puI-Zp-3U0" id="A6d-ZL-IGp"/>
                         <outlet property="tableVw" destination="HY6-fh-YAf" id="iKF-g1-MwV"/>
                     </connections>

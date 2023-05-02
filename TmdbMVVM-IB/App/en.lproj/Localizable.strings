@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  TmdbMVVM-IB
+
+  Created by user on 02/05/23.
+  
+*/
+
+"key_title_movies_in_genre" = "%@ Movies";
