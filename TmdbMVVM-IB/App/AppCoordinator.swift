@@ -7,6 +7,9 @@
 
 import Swinject
 import UIKit
+import app_framework
+import data
+import domain
 
 class AppCoordinator: Coordinator {
     private let container = Container()

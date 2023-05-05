@@ -8,6 +8,7 @@
 import Foundation
 import SVProgressHUD
 import UIKit
+import app_framework
 
 class MovieReviewVC: BaseVC<MovieReviewVM>, Storyboarded {
 
@@ -32,7 +33,7 @@ class MovieReviewVC: BaseVC<MovieReviewVM>, Storyboarded {
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .singleLine
 
-        let nibTVC = UINib(nibName: nbName, bundle: nil)
+        let nibTVC = UINib(nibName: nbName, bundle: Bundle(identifier: "com.dpfht.TmdbMVVM-IB.app-framework"))
         tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
 
         tableVw.reloadData()

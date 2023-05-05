@@ -8,6 +8,7 @@
 import Foundation
 import SVProgressHUD
 import YouTubePlayer
+import app_framework
 
 class MovieTrailerVC: BaseVC<MovieTrailerVM>, Storyboarded, YouTubePlayerDelegate {
 

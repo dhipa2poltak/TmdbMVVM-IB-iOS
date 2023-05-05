@@ -7,6 +7,7 @@
 
 import SVProgressHUD
 import UIKit
+import app_framework
 
 class GenreVC: BaseVC<GenreVM>, Storyboarded {
 
@@ -48,7 +49,7 @@ class GenreVC: BaseVC<GenreVM>, Storyboarded {
         tableVw.backgroundColor = .clear
         tableVw.separatorStyle = .none
 
-        let nibTVC = UINib(nibName: nbName, bundle: nil)
+        let nibTVC = UINib(nibName: nbName, bundle: Bundle(identifier: "com.dpfht.TmdbMVVM-IB.app-framework"))
         tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
     }
 
