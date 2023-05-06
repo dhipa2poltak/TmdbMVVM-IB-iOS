@@ -241,7 +241,7 @@
         <!--Movie TrailerVC-->
         <scene sceneID="K8h-TW-U2x">
             <objects>
-                <viewController storyboardIdentifier="MovieTrailerVC" id="asa-9e-06K" customClass="MovieTrailerVC" customModule="TmdbMVVM_IB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieTrailerVC" id="asa-9e-06K" customClass="MovieTrailerVC" customModule="feature_movie_trailer" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hLB-ZP-gqv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

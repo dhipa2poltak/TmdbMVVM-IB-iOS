@@ -10,11 +10,11 @@ import SVProgressHUD
 import YouTubePlayer
 import app_framework
 
-class MovieTrailerVC: BaseVC<MovieTrailerVM>, Storyboarded, YouTubePlayerDelegate {
+public class MovieTrailerVC: BaseVC<MovieTrailerVM>, Storyboarded, YouTubePlayerDelegate {
 
     @IBOutlet weak var youtubePlayer: YouTubePlayerView!
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
         // Do any additional setup after loading the view.
@@ -26,7 +26,7 @@ class MovieTrailerVC: BaseVC<MovieTrailerVM>, Storyboarded, YouTubePlayerDelegat
         }
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
 
         viewModel?.isShowDialogLoading.bind { isShowDialogLoading in
@@ -45,7 +45,7 @@ class MovieTrailerVC: BaseVC<MovieTrailerVM>, Storyboarded, YouTubePlayerDelegat
         }
     }
 
-    func playerReady(_ videoPlayer: YouTubePlayerView) {
+    public func playerReady(_ videoPlayer: YouTubePlayerView) {
         youtubePlayer.play()
     }
 }

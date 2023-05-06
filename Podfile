@@ -62,6 +62,15 @@ target 'feature_movie_review' do
   pod 'RxSwift',    '~> 6.0.0'
 end
 
+target 'feature_movie_trailer' do
+  project './features/feature_movie_trailer/feature_movie_trailer.project'
+
+  pod 'SVProgressHUD', '~> 2.2.5'
+  pod 'RxSwift',    '~> 6.0.0'
+
+  pod 'YouTubePlayer'
+end
+
 target 'TmdbMVVM-IB' do
   # Comment the next line if you don't want to use dynamic frameworks
 

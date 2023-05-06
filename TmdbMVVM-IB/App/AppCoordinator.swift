@@ -14,6 +14,7 @@ import feature_genre
 import feature_movie_by_genre
 import feature_movie_detail
 import feature_movie_review
+import feature_movie_trailer
 
 class AppCoordinator: NavigationProtocol, Coordinator {
     private let container = Container()
