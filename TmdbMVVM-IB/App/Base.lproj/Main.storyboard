@@ -184,7 +184,7 @@
         <!--Movie ReviewVC-->
         <scene sceneID="0HW-3W-uzy">
             <objects>
-                <viewController storyboardIdentifier="MovieReviewVC" id="GAm-xy-JNn" customClass="MovieReviewVC" customModule="TmdbMVVM_IB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieReviewVC" id="GAm-xy-JNn" customClass="MovieReviewVC" customModule="feature_movie_review" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v2m-mC-P4W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

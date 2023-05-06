@@ -10,7 +10,7 @@ import RxSwift
 import app_framework
 import domain
 
-class MovieReviewVM: BaseVM {
+public class MovieReviewVM: BaseVM {
 
     private let getMovieReviewUseCase: GetMovieReviewUseCase?
     private let disposeBag = DisposeBag()
@@ -18,11 +18,11 @@ class MovieReviewVM: BaseVM {
     var reviews: [ReviewEntity] = []
     let reviewData: Box<Bool?> = Box(false)
 
-    var movieId = -1
-    var movieTitle = ""
+    public var movieId = -1
+    public var movieTitle = ""
     var page = 1
 
-    init(getMovieReviewUseCase: GetMovieReviewUseCase?) {
+    public init(getMovieReviewUseCase: GetMovieReviewUseCase?) {
         self.getMovieReviewUseCase = getMovieReviewUseCase
     }
 
