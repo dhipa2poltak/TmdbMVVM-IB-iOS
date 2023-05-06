@@ -11,15 +11,15 @@ import SVProgressHUD
 import UIKit
 import app_framework
 
-class MovieDetailVC: BaseVC<MovieDetailVM>, Storyboarded {
+public class MovieDetailVC: BaseVC<MovieDetailVM>, Storyboarded {
 
     @IBOutlet weak var lblTitleMovie: UILabel!
     @IBOutlet weak var ivMovie: UIImageView!
     @IBOutlet weak var lblDesc: UILabel!
 
-    var navigationService: NavigationProtocol?
+    public var navigationService: NavigationProtocol?
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
         // Do any additional setup after loading the view.
@@ -28,7 +28,7 @@ class MovieDetailVC: BaseVC<MovieDetailVM>, Storyboarded {
         viewModel?.fetchMovieDetail(movieId: viewModel?.movieId ?? -1)
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
 
         viewModel?.isShowDialogLoading.bind { isShowDialogLoading in

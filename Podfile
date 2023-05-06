@@ -47,6 +47,14 @@ target 'feature_movie_by_genre' do
   pod 'RxSwift',    '~> 6.0.0'
 end
 
+target 'feature_movie_detail' do
+  project './features/feature_movie_detail/feature_movie_detail.project'
+
+  pod 'Kingfisher', '~> 4.10.1'
+  pod 'SVProgressHUD', '~> 2.2.5'
+  pod 'RxSwift',    '~> 6.0.0'
+end
+
 target 'TmdbMVVM-IB' do
   # Comment the next line if you don't want to use dynamic frameworks
 

@@ -12,6 +12,7 @@ import data
 import domain
 import feature_genre
 import feature_movie_by_genre
+import feature_movie_detail
 
 class AppCoordinator: NavigationProtocol, Coordinator {
     private let container = Container()
