@@ -9,11 +9,11 @@ import SVProgressHUD
 import UIKit
 import app_framework
 
-class GenreVC: BaseVC<GenreVM>, Storyboarded {
+public class GenreVC: BaseVC<GenreVM>, Storyboarded {
 
     @IBOutlet weak var tableVw: UITableView!
 
-    weak var coordinator: AppCoordinator?
+    public var navigationService: NavigationProtocol?
 
     private let nbName = "GenreTVC"
     private let cellId = "GenreTVC"
@@ -24,7 +24,7 @@ class GenreVC: BaseVC<GenreVM>, Storyboarded {
         return rc
     }()
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
 
@@ -53,7 +53,7 @@ class GenreVC: BaseVC<GenreVM>, Storyboarded {
         tableVw.register(nibTVC, forCellReuseIdentifier: cellId)
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
         
         viewModel?.isShowDialogLoading.bind { isShowDialogLoading in
@@ -79,11 +79,11 @@ class GenreVC: BaseVC<GenreVM>, Storyboarded {
 }
 
 extension GenreVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.genres?.count ?? 0
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! GenreTVC
         cell.selectionStyle = .none
 
@@ -94,8 +94,8 @@ extension GenreVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let genre = viewModel?.genres?[indexPath.row]
-        coordinator?.showMovieByGenre(genreId: genre?.id ?? -1, genreName: genre?.name ?? "unknown")
+        navigationService?.showMovieByGenre(genreId: genre?.id ?? -1, genreName: genre?.name ?? "unknown")
     }
 }

@@ -33,6 +33,13 @@ target 'app_framework' do
   pod 'RxSwift',    '~> 6.0.0'
 end
 
+target 'feature_genre' do
+  project './features/feature_genre/feature_genre.project'
+
+  pod 'SVProgressHUD', '~> 2.2.5'
+  pod 'RxSwift',    '~> 6.0.0'
+end
+
 target 'TmdbMVVM-IB' do
   # Comment the next line if you don't want to use dynamic frameworks
 

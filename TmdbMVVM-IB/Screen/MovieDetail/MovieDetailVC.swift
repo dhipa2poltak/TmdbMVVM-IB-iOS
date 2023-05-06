@@ -17,7 +17,7 @@ class MovieDetailVC: BaseVC<MovieDetailVM>, Storyboarded {
     @IBOutlet weak var ivMovie: UIImageView!
     @IBOutlet weak var lblDesc: UILabel!
 
-    weak var coordinator: AppCoordinator?
+    var navigationService: NavigationProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +58,12 @@ class MovieDetailVC: BaseVC<MovieDetailVM>, Storyboarded {
         let movieId = viewModel?.movieId ?? -1
         let movieTitle = viewModel?.movieDetailsDomain?.title ?? "unknown"
 
-        coordinator?.showMovieReview(movieId: movieId, movieTitle: movieTitle)
+        navigationService?.showMovieReview(movieId: movieId, movieTitle: movieTitle)
     }
 
     @IBAction func onClickShowTrailer(_ sender: UIButton) {
         let movieId = viewModel?.movieId ?? -1
 
-        coordinator?.showMovieTrailer(movieId: movieId)
+        navigationService?.showMovieTrailer(movieId: movieId)
     }
 }

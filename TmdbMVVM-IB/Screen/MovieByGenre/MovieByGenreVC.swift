@@ -15,7 +15,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tableVw: UITableView!
 
-    weak var coordinator: AppCoordinator?
+    var navigationService: NavigationProtocol?
 
     private let nbName = "MovieTVC"
     private let cellId = "MovieTVC"
@@ -93,6 +93,6 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = viewModel?.movies[indexPath.row]
-        coordinator?.showMovieDetail(movieId: movie?.id ?? -1)
+        navigationService?.showMovieDetail(movieId: movie?.id ?? -1)
     }
 }
