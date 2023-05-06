@@ -49,7 +49,7 @@
         <!--Movie By GenreVC-->
         <scene sceneID="fxN-bG-8Fm">
             <objects>
-                <viewController storyboardIdentifier="MovieByGenreVC" id="lhn-4d-EE0" customClass="MovieByGenreVC" customModule="TmdbMVVM_IB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieByGenreVC" id="lhn-4d-EE0" customClass="MovieByGenreVC" customModule="feature_movie_by_genre" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rAm-Kf-qEx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

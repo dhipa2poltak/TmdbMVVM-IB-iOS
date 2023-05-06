@@ -40,6 +40,13 @@ target 'feature_genre' do
   pod 'RxSwift',    '~> 6.0.0'
 end
 
+target 'feature_movie_by_genre' do
+  project './features/feature_movie_by_genre/feature_movie_by_genre.project'
+
+  pod 'SVProgressHUD', '~> 2.2.5'
+  pod 'RxSwift',    '~> 6.0.0'
+end
+
 target 'TmdbMVVM-IB' do
   # Comment the next line if you don't want to use dynamic frameworks
 

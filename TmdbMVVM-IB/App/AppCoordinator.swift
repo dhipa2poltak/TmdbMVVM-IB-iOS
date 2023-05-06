@@ -11,6 +11,7 @@ import app_framework
 import data
 import domain
 import feature_genre
+import feature_movie_by_genre
 
 class AppCoordinator: NavigationProtocol, Coordinator {
     private let container = Container()

@@ -10,17 +10,17 @@ import SVProgressHUD
 import UIKit
 import app_framework
 
-class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
+public class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tableVw: UITableView!
 
-    var navigationService: NavigationProtocol?
+    public var navigationService: NavigationProtocol?
 
     private let nbName = "MovieTVC"
     private let cellId = "MovieTVC"
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         super.setupNavBar()
         // Do any additional setup after loading the view.
@@ -46,7 +46,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
         }
     }
 
-    override func setupObserver() {
+    public override func setupObserver() {
         super.setupObserver()
 
         viewModel?.isShowDialogLoading.bind { [weak self] isShowDialogLoading in
@@ -65,7 +65,7 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
         }
     }
 
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                    withVelocity _: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
     {
         let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
@@ -77,11 +77,11 @@ class MovieByGenreVC: BaseVC<MovieByGenreVM>, Storyboarded {
 }
 
 extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.movies.count ?? 0
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MovieTVC
         cell.selectionStyle = .none
 
@@ -91,7 +91,7 @@ extension MovieByGenreVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = viewModel?.movies[indexPath.row]
         navigationService?.showMovieDetail(movieId: movie?.id ?? -1)
     }
