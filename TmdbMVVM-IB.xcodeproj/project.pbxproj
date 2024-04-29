@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		341BCDACE205E09CE24BD1C1 /* Pods_TmdbMVVM_IB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAB9398B026A8091E953855 /* Pods_TmdbMVVM_IB.framework */; };
 		CE0628422A01405E00398444 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE0628442A01405E00398444 /* Localizable.strings */; };
-		CE0635622A0565CE00398444 /* app_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635612A0565CE00398444 /* app_framework.framework */; };
-		CE0635662A0565E100398444 /* domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635652A0565E100398444 /* domain.framework */; };
-		CE0635692A0565EB00398444 /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635682A0565EB00398444 /* data.framework */; };
 		CE0635B72A06142400398444 /* feature_genre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635B62A06142400398444 /* feature_genre.framework */; };
 		CE0635B82A06142400398444 /* feature_genre.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635B62A06142400398444 /* feature_genre.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE0636222A063C0900398444 /* feature_movie_by_genre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0636212A063C0900398444 /* feature_movie_by_genre.framework */; };
@@ -30,6 +27,12 @@
 		CE84453029AF097B00231703 /* TmdbMVVM_IBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84452F29AF097B00231703 /* TmdbMVVM_IBUITests.swift */; };
 		CE84454829AF0A9400231703 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84454729AF0A9400231703 /* Coordinator.swift */; };
 		CE84455029AF0ADA00231703 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE84454F29AF0ADA00231703 /* AppCoordinator.swift */; };
+		CEAB12922BDFDD2F00180664 /* domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635652A0565E100398444 /* domain.framework */; };
+		CEAB12932BDFDD2F00180664 /* domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635652A0565E100398444 /* domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEAB12942BDFDD3300180664 /* data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635682A0565EB00398444 /* data.framework */; };
+		CEAB12952BDFDD3300180664 /* data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635682A0565EB00398444 /* data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEAB12962BDFDD3700180664 /* app_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635612A0565CE00398444 /* app_framework.framework */; };
+		CEAB12972BDFDD3700180664 /* app_framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0635612A0565CE00398444 /* app_framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8427CDA2A05CCC7DBE2C317 /* Pods_TmdbMVVM_IBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94351AAD5EDBB9ED70722BE /* Pods_TmdbMVVM_IBUITests.framework */; };
 		F4B5CD7E7497E696F7C3DABB /* Pods_TmdbMVVM_IBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B9A555A50325BA1FA48389 /* Pods_TmdbMVVM_IBTests.framework */; };
 /* End PBXBuildFile section */
@@ -59,9 +62,12 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CE0636232A063C0900398444 /* feature_movie_by_genre.framework in Embed Frameworks */,
+				CEAB12972BDFDD3700180664 /* app_framework.framework in Embed Frameworks */,
 				CE0636FE2A06667B00398444 /* feature_movie_trailer.framework in Embed Frameworks */,
 				CE0635B82A06142400398444 /* feature_genre.framework in Embed Frameworks */,
+				CEAB12952BDFDD3300180664 /* data.framework in Embed Frameworks */,
 				CE0636B22A0662C800398444 /* feature_movie_review.framework in Embed Frameworks */,
+				CEAB12932BDFDD2F00180664 /* domain.framework in Embed Frameworks */,
 				CE0636672A064C8300398444 /* feature_movie_detail.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -131,14 +137,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0635B72A06142400398444 /* feature_genre.framework in Frameworks */,
-				CE0635692A0565EB00398444 /* data.framework in Frameworks */,
 				CE0636FD2A06667B00398444 /* feature_movie_trailer.framework in Frameworks */,
 				CE0636662A064C8200398444 /* feature_movie_detail.framework in Frameworks */,
+				CEAB12962BDFDD3700180664 /* app_framework.framework in Frameworks */,
 				341BCDACE205E09CE24BD1C1 /* Pods_TmdbMVVM_IB.framework in Frameworks */,
-				CE0635662A0565E100398444 /* domain.framework in Frameworks */,
 				CE0636222A063C0900398444 /* feature_movie_by_genre.framework in Frameworks */,
 				CE0636B12A0662C800398444 /* feature_movie_review.framework in Frameworks */,
-				CE0635622A0565CE00398444 /* app_framework.framework in Frameworks */,
+				CEAB12922BDFDD2F00180664 /* domain.framework in Frameworks */,
+				CEAB12942BDFDD3300180664 /* data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
