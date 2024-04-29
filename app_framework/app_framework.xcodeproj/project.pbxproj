@@ -16,7 +16,6 @@
 		CE0635302A05642D00398444 /* RemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0635292A05642D00398444 /* RemoteDataSourceImpl.swift */; };
 		CE0635312A05642D00398444 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06352D2A05642D00398444 /* ApiClient.swift */; };
 		CE0635322A05642D00398444 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06352E2A05642D00398444 /* Router.swift */; };
-		CE0635332A05642D00398444 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06352F2A05642D00398444 /* ErrorResponse.swift */; };
 		CE0635382A05644400398444 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0635362A05644400398444 /* UIColor+Ext.swift */; };
 		CE0635392A05644400398444 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0635372A05644400398444 /* UIViewController+Ext.swift */; };
 		CE0635452A05646200398444 /* MovieTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE06353D2A05646200398444 /* MovieTVC.xib */; };
@@ -63,7 +62,6 @@
 		CE0635292A05642D00398444 /* RemoteDataSourceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceImpl.swift; sourceTree = "<group>"; };
 		CE06352D2A05642D00398444 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		CE06352E2A05642D00398444 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		CE06352F2A05642D00398444 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		CE0635362A05644400398444 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		CE0635372A05644400398444 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CE06353D2A05646200398444 /* MovieTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTVC.xib; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 		CE0635272A05642D00398444 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				CE06352A2A05642D00398444 /* core */,
 				CE0635282A05642D00398444 /* datasource */,
 			);
 			path = data;
@@ -164,35 +161,9 @@
 		CE0635282A05642D00398444 /* datasource */ = {
 			isa = PBXGroup;
 			children = (
-				CE0635292A05642D00398444 /* RemoteDataSourceImpl.swift */,
+				CEAB129A2BE0446F00180664 /* remote */,
 			);
 			path = datasource;
-			sourceTree = "<group>";
-		};
-		CE06352A2A05642D00398444 /* core */ = {
-			isa = PBXGroup;
-			children = (
-				CE06352B2A05642D00398444 /* api */,
-			);
-			path = core;
-			sourceTree = "<group>";
-		};
-		CE06352B2A05642D00398444 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				CE06352C2A05642D00398444 /* rest */,
-			);
-			path = api;
-			sourceTree = "<group>";
-		};
-		CE06352C2A05642D00398444 /* rest */ = {
-			isa = PBXGroup;
-			children = (
-				CE06352D2A05642D00398444 /* ApiClient.swift */,
-				CE06352E2A05642D00398444 /* Router.swift */,
-				CE06352F2A05642D00398444 /* ErrorResponse.swift */,
-			);
-			path = rest;
 			sourceTree = "<group>";
 		};
 		CE0635352A05644400398444 /* Extension */ = {
@@ -258,6 +229,24 @@
 				CE0635F52A06163700398444 /* NavigationProtocol.swift */,
 			);
 			path = navigation;
+			sourceTree = "<group>";
+		};
+		CEAB129A2BE0446F00180664 /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				CEAB129B2BE0448900180664 /* rest */,
+				CE0635292A05642D00398444 /* RemoteDataSourceImpl.swift */,
+			);
+			path = remote;
+			sourceTree = "<group>";
+		};
+		CEAB129B2BE0448900180664 /* rest */ = {
+			isa = PBXGroup;
+			children = (
+				CE06352D2A05642D00398444 /* ApiClient.swift */,
+				CE06352E2A05642D00398444 /* Router.swift */,
+			);
+			path = rest;
 			sourceTree = "<group>";
 		};
 		CFFE9D0019E3FB7768D6EAC5 /* Pods */ = {
@@ -394,7 +383,6 @@
 				CE0635F62A06163700398444 /* NavigationProtocol.swift in Sources */,
 				CE0635312A05642D00398444 /* ApiClient.swift in Sources */,
 				CE0635462A05646200398444 /* MovieTVC.swift in Sources */,
-				CE0635332A05642D00398444 /* ErrorResponse.swift in Sources */,
 				CE0635492A05646200398444 /* ReviewTVC.swift in Sources */,
 				CE0635F32A06160300398444 /* Storyboarded.swift in Sources */,
 			);

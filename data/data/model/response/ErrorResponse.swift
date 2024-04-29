@@ -1,16 +1,16 @@
 //
 //  ErrorResponse.swift
-//  TmdbMVVM-IB
+//  data
 //
-//  Created by user on 01/05/23.
+//  Created by user on 30/04/24.
 //
 
 import Foundation
 
-struct ErrorResponse: Codable {
-    let success: Bool?
-    let statusCode: Int?
-    let statusMessage: String?
+public struct ErrorResponse: Codable {
+    public let success: Bool?
+    public let statusCode: Int?
+    public let statusMessage: String?
 
     enum CodingKeys: String, CodingKey {
         case success
