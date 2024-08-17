@@ -11,9 +11,17 @@ import domain
 
 public class ReviewTVC: UITableViewCell {
 
+    @IBOutlet weak var vwContent: UIView!
     @IBOutlet weak var lblContent: UILabel!
     @IBOutlet weak var ivAuthor: UIImageView!
     @IBOutlet weak var lblAuthor: UILabel!
+
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+
+        self.vwContent.layer.borderWidth = 1
+        self.vwContent.layer.borderColor = UIColor.lightGray.cgColor
+    }
 
     public func bindData(review: ReviewEntity) {
         lblContent.text = review.content
