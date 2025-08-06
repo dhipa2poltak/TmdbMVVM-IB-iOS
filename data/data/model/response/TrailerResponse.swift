@@ -10,23 +10,23 @@ import domain
 
 public struct TrailerResponse: Codable {
     let id: Int?
-    let results: [Trailer]?
+    let results: [TrailerDTO]?
 
     enum CodingKeys: String, CodingKey {
         case id
         case results
     }
 
-    init(id: Int?, results: [Trailer]?) {
+    init(id: Int?, results: [TrailerDTO]?) {
         self.id = id
         self.results = results
     }
 }
 
 extension TrailerResponse {
-    func toDomain() -> TrailerDomain {
-        let trailerEntities = results?.map { (trailer) -> TrailerEntity in
-            return TrailerEntity(
+    func toDomain() -> TrailerModel {
+        let trailerEntities = results?.map { (trailer) -> Trailer in
+            return Trailer(
                 id: trailer.id ?? "",
                 key: trailer.key ?? "",
                 name: trailer.name ?? "",
@@ -34,6 +34,6 @@ extension TrailerResponse {
             )
         }
 
-        return TrailerDomain(id: self.id ?? -1, results: trailerEntities ?? [])
+        return TrailerModel(id: self.id ?? -1, results: trailerEntities ?? [])
     }
 }

@@ -23,7 +23,7 @@ public class ReviewTVC: UITableViewCell {
         self.vwContent.layer.borderColor = UIColor.lightGray.cgColor
     }
 
-    public func bindData(review: ReviewEntity) {
+    public func bindData(review: Review) {
         lblContent.text = review.content
 
         if let avatarPath = review.authorDetails?.avatarPath {
